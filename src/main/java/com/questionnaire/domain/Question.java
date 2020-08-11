@@ -1,10 +1,25 @@
 package com.questionnaire.domain;
 
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "questions")
 public class Question {
 
-    String questionText;
+    @Id
+    public ObjectId _id;
 
+    String questionText;
     Integer questionNumber;
+
+    public Question() {}
+
+    public Question(ObjectId _id, String questionText, Integer questionNumber) {
+        this._id = _id;
+        this.questionText = questionText;
+        this.questionNumber = questionNumber;
+    }
 
     public String getQuestionText() {
         return questionText;
