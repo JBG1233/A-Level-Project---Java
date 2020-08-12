@@ -22,13 +22,14 @@ public class QuestionRestController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/UK")
     public List<Question> loadUKQuiz () {
-           // Question question = new Question();
-            //question.setQuestionText("What is the capitol city of London?");
+            //Question question = new Question();
+            //question.setQuestionCode("CAD");
+            //question.setQuestionText("What leaf is on the Canadian flag??");
             //question.setQuestionNumber(1);
             //questionsRepository.save(question);
         //List<Question> loadUKQuiz = new ArrayList();
-           // loadUKQuiz.add(question);
-        return questionsRepository.findAll();
+           ///loadUKQuiz.add(question);
+        return questionsRepository.findByQuestionNumberEqualsOrRandNum();
     }
 
 }

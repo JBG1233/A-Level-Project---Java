@@ -9,4 +9,7 @@ import java.util.List;
 @RepositoryDefinition(domainClass = Question.class, idClass = String.class)
 public interface QuestionsRepository extends MongoRepository<Question, String> {
     Question findBy_id(ObjectId _id);
+    List<Question> findByQuestionCode(String questionCode);
+    List<Question> findByQuestionNumberEqualsOrRandNum();
+
 }
