@@ -5,11 +5,13 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.repository.RepositoryDefinition;
 
 import java.util.List;
+import java.util.Set;
 
 @RepositoryDefinition(domainClass = Question.class, idClass = String.class)
 public interface QuestionsRepository extends MongoRepository<Question, String> {
     Question findBy_id(ObjectId _id);
-    List<Question> findByQuestionCode(String questionCode);
-    List<Question> findByQuestionNumberEqualsOrRandNum();
+    Set<Question> findByQuestionNumberInAndQuestionCode(Set<Integer> questionNumber, String questionCode );
+
+
 
 }

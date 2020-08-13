@@ -3,13 +3,16 @@ package com.questionnaire.rest;
 
 import com.questionnaire.domain.Question;
 import com.questionnaire.repositories.QuestionsRepository;
+import com.questionnaire.service.RandomNumberGenerator;
+import lombok.extern.slf4j.Slf4j;
+import org.elasticsearch.common.inject.Inject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
-
+@Slf4j
 @RestController
 @RequestMapping("/rest/questions")
 @CrossOrigin(origins = "http://localhost:3000")
@@ -19,17 +22,13 @@ public class QuestionRestController {
     @Autowired
     private QuestionsRepository questionsRepository;
 
+    RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
+
 
     @RequestMapping(method = RequestMethod.GET, value = "/UK")
-    public List<Question> loadUKQuiz () {
-            //Question question = new Question();
-            //question.setQuestionCode("CAD");
-            //question.setQuestionText("What leaf is on the Canadian flag??");
-            //question.setQuestionNumber(1);
-            //questionsRepository.save(question);
-        //List<Question> loadUKQuiz = new ArrayList();
-           ///loadUKQuiz.add(question);
-        return questionsRepository.findByQuestionNumberEqualsOrRandNum();
+    public Set<Question> loadUKQuiz () {
+        Question question = new Question();
+        Set<Integer> randomNumbers = randomNumberGenerator.generate(20);
+        return questionsRepository.findByQuestionNumberInAndQuestionCode(randomNumbers, "GBP");
     }
-
 }

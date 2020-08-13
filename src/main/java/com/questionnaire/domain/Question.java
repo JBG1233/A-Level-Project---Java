@@ -9,23 +9,20 @@ public class Question {
 
     @Id
     public ObjectId _id;
-    public Double randNum;
     public String questionCode;
     public String questionText;
     public Integer questionNumber;
+    public String questionAnswer;
+
 
     public Question() {}
 
-    public Question(ObjectId _id, Double randNum, String questionCode, String questionText, Integer questionNumber) {
+    public Question(ObjectId _id, String questionCode, String questionText, Integer questionNumber, String questionAnswer) {
         this._id = _id;
-        this.randNum = randNum;
         this.questionCode = questionCode;
         this.questionText = questionText;
         this.questionNumber = questionNumber;
-    }
-
-    public Double getRandNum() {
-        return randNum;
+        this.questionAnswer = questionAnswer;
     }
 
     public String getQuestionCode() {
@@ -40,8 +37,8 @@ public class Question {
         return questionNumber;
     }
 
-    public void setRandNum(Double randNum) {
-        this.randNum = (Math.random() * ( 20 - 1 )) + 1;
+    public String getQuestionAnswer() {
+        return questionAnswer;
     }
 
     public void setQuestionCode(String questionCode) {
@@ -54,6 +51,10 @@ public class Question {
 
     public void setQuestionNumber(Integer questionNumber) {
         this.questionNumber = questionNumber;
+    }
+
+    public void setQuestionAnswer(String questionAnswer) {
+        this.questionAnswer = questionAnswer;
     }
 
 }
