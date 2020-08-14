@@ -15,12 +15,16 @@ public class RandomNumberGenerator {
     public Set<Integer> generate(int endRange) {
 
         Random rand = new Random();
-        int int_random = rand.nextInt(endRange);
-
 
         Set<Integer> numbers = new HashSet<>();
-        while (numbers.size() < 4) {
-            numbers.add(int_random);
+
+        while (numbers.size() < 7) {
+            int randomNum = rand.nextInt(endRange) + 1;
+            if (numbers.contains(randomNum)) {
+                log.info("{}", numbers);
+            } else {
+                numbers.add(randomNum);
+            }
         }
 
         return numbers;
