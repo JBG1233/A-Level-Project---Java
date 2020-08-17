@@ -21,7 +21,6 @@ public class RandomNumberGenerator {
         while (numbers.size() < 7) {
             int randomNum = rand.nextInt(endRange) + 1;
             if (numbers.contains(randomNum)) {
-                log.info("{}", numbers);
             } else {
                 numbers.add(randomNum);
             }

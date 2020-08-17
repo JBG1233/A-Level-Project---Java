@@ -2,28 +2,44 @@ package com.questionnaire.rest;
 
 import com.questionnaire.domain.User;
 import com.questionnaire.repositories.UserRepository;
+import com.questionnaire.service.BadRequestException;
+import com.questionnaire.service.ConflictException;
 import lombok.extern.slf4j.Slf4j;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import org.springframework.web.client.HttpClientErrorException;
 
 @Slf4j
 @RestController
 @RequestMapping("/rest")
 @CrossOrigin(origins = "http://localhost:3000")
 public class UserRestController {
+
     @Autowired
     private UserRepository userRepository;
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/Register")
-    public User register (@Valid @RequestBody User user) {
-            userRepository.save(user);
-            return user;
+    public User register(@RequestBody User user) throws ConflictException {
+        if (userRepository.findByUsernameIn(user.getUsername()) == null) {
+            return userRepository.save(new User(user.getUsername(), user.getPassword()));
+        } else {
+            throw new ConflictException("User already exists");
+        }
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/Login")
+    public User login(@RequestBody User user) throws BadRequestException {
+        if (userRepository.findByUsernameIn(user.getUsername()) == null) {
+            throw new BadRequestException("Username or password not found");
+        } else {
+            if (userRepository.findByPasswordIn(user.getPassword()) == null) {
+                throw new BadRequestException("Username or password not found");
+            } else {
+                return userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword());
+            }
+        }
     }
 }
+
+

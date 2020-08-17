@@ -14,9 +14,6 @@ public class Question {
     public Integer questionNumber;
     public String questionAnswer;
 
-
-    public Question() {}
-
     public Question(ObjectId _id, String questionCode, String questionText, Integer questionNumber, String questionAnswer) {
         this._id = _id;
         this.questionCode = questionCode;
