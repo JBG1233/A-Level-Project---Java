@@ -2,6 +2,7 @@ package com.questionnaire.rest;
 
 import com.questionnaire.domain.User;
 import com.questionnaire.repositories.UserRepository;
+import com.questionnaire.service.Access_Token;
 import com.questionnaire.service.BadRequestException;
 import com.questionnaire.service.ConflictException;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +23,9 @@ public class UserRestController {
     @RequestMapping(method = RequestMethod.POST, value = "/Register")
     public User register(@RequestBody User user) throws ConflictException {
         if (userRepository.findByUsernameIn(user.getUsername()) == null) {
-            return userRepository.save(new User(user.getUsername(), user.getPassword()));
+
+            String access_Token = Access_Token.getAlphaNumericString(15);
+            return userRepository.save(new User(user.getUsername(), user.getPassword(), access_Token));
         } else {
             throw new ConflictException("User already exists");
         }
