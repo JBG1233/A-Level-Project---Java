@@ -5,7 +5,6 @@ import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.repository.RepositoryDefinition;
 
-import java.util.List;
 import java.util.Set;
 
 @RepositoryDefinition(domainClass = Question.class, idClass = String.class)

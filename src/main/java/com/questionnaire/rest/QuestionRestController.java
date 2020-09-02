@@ -13,7 +13,8 @@ import java.util.Set;
 @Slf4j
 @RestController
 @RequestMapping("/rest/questions")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3001")
+
 
 public class QuestionRestController {
 
@@ -34,4 +35,22 @@ public class QuestionRestController {
         Set<Integer> randomNumbers = randomNumberGenerator.generate(19);
         return questionsRepository.findByQuestionNumberInAndQuestionCode(randomNumbers, "CAD");
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/Australia")
+    public Set<Question> loadAustraliaQuiz () {
+        Set<Integer> randomNumbers = randomNumberGenerator.generate(19);
+        return questionsRepository.findByQuestionNumberInAndQuestionCode(randomNumbers, "AUS");
+    }
+    @RequestMapping(method = RequestMethod.GET, value = "/Brazil")
+    public Set<Question> loadBrazilQuiz () {
+        Set<Integer> randomNumbers = randomNumberGenerator.generate(19);
+        return questionsRepository.findByQuestionNumberInAndQuestionCode(randomNumbers, "BRL");
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/China")
+    public Set<Question> loadChinaQuiz () {
+        Set<Integer> randomNumbers = randomNumberGenerator.generate(19);
+        return questionsRepository.findByQuestionNumberInAndQuestionCode(randomNumbers, "CNY");
+    }
+
 }

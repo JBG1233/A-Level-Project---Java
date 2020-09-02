@@ -13,7 +13,8 @@ import org.springframework.web.client.HttpClientErrorException;
 @Slf4j
 @RestController
 @RequestMapping("/rest")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3001")
+
 public class UserRestController {
 
     @Autowired

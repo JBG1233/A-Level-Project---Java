@@ -1,5 +1,8 @@
 package com.questionnaire.service;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class Access_Token {
 
     public static String getAlphaNumericString(int n)
@@ -20,12 +23,4 @@ public class Access_Token {
         }
         return sb.toString();
     }
-
-    public static void main(String[] args)
-    {
-
-        int n = 20;
-
-    }
-
-    }
+}
