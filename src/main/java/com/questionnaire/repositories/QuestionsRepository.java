@@ -11,7 +11,7 @@ import java.util.Set;
 public interface QuestionsRepository extends MongoRepository<Question, String> {
     Question findBy_id(ObjectId _id);
     Set<Question> findByQuestionNumberInAndQuestionCode(Set<Integer> questionNumber, String questionCode );
-
+    boolean findByQuestionCodeIsIn(String questionCode );
 
 
 }
