@@ -23,7 +23,6 @@ public class UserRestController {
     @RequestMapping(method = RequestMethod.POST, value = "/Register")
     public User register(@RequestBody User user) throws ConflictException {
         if (userRepository.findByUsernameIn(user.getUsername()) == null) {
-
             String access_Token = Access_Token.getAlphaNumericString(15);
             return userRepository.save(new User(user.getUsername(), user.getPassword(), access_Token));
         } else {
