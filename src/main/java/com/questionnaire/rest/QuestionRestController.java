@@ -33,6 +33,7 @@ public class QuestionRestController {
     @RequestMapping(method = RequestMethod.GET, value = "/Canada")
     public Set<Question> loadCanadaQuiz () {
         Set<Integer> randomNumbers = randomNumberGenerator.generate(19);
+        log.info("{}", questionsRepository.findByQuestionNumberInAndQuestionCode(randomNumbers, "CAD"));
         return questionsRepository.findByQuestionNumberInAndQuestionCode(randomNumbers, "CAD");
     }
 

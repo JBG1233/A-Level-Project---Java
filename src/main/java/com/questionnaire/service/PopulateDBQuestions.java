@@ -40,15 +40,15 @@ public class PopulateDBQuestions {
         createQuestion("GBP", "What is the national flower of Wales?", 20, "Daffodil");
 
         //CANADA DATABASE POPULATION
-        createQuestion("CAD", "How many time zones does Canada have?", 1, "six");
-        createQuestion("CAD", "How many oceans border Canada?", 2, "three");
+        createQuestion("CAD", "How many time zones does Canada have?", 1, "6");
+        createQuestion("CAD", "How many oceans border Canada?", 2, "3");
         createQuestion("CAD", "If hockey is Canada's national winter sport, what is its national summer sport?", 3, "Lacrosse");
         createQuestion("CAD", "Who became the prime minister on November 4, 2015?", 4, "Justin Trudeau");
         createQuestion("CAD", "What city is the CN Tower in?", 5, "Toronto");
         createQuestion("CAD", "What is the Canadian dish made with french fries, topped with cheese curds and a brown gravy-like sauce?", 6, "Poutine");
         createQuestion("CAD", "What year was the Trans-Canada Highway finally completed?", 7, "1971");
         createQuestion("CAD", "What is the largest city in Canada?", 8, "Toronto");
-        createQuestion("CAD", "How many provinces does Canada have?", 9, "ten");
+        createQuestion("CAD", "How many provinces does Canada have?", 9, "10");
         createQuestion("CAD", "What is the longest river in Canada called?", 10, "Mackenzie River");
         createQuestion("CAD", "What date did Canada get its independence from the Great Britain?", 11, "1st July 1867");
         createQuestion("CAD", "What is the longest bridge in Canada", 12, "Confederation Bridge");
@@ -70,31 +70,31 @@ public class PopulateDBQuestions {
         createQuestion("AUS", "What percent of Australia is classified as desert?", 6, "35%");
         createQuestion("AUS", "In rhyming slang, if someone said they we going to have a “bo-peep”, what may they be doing?", 7, "Having a sleep");
         createQuestion("AUS", "What is South Australia’s largest island?", 8, "Kangaroo Island");
-        createQuestion("AUS", "How many ships were in the first fleet?", 9, "eleven");
-        createQuestion("AUS", "What is South Australia’s largest island?", 10, "one cent    ");
+        createQuestion("AUS", "How many ships were in the first fleet?", 9, "11");
+        createQuestion("AUS", "What is South Australia’s largest island?", 10, "one cent");
         createQuestion("AUS", "What is a triantiwontigongolope?", 11, "A mythical insect");
         createQuestion("AUS", "Are there more kangaroos or humans in Australia?", 12, "Kangaroos");
-        createQuestion("AUS", "How many states does Australia have?", 13, "six");
+        createQuestion("AUS", "How many states does Australia have?", 13, "6");
         createQuestion("AUS", "What constallation is depicted on the Australian flag?", 14, "The southern cross");
         createQuestion("AUS", "Australian, Julian Assange, founder of Wikileaks, was born in which region?", 15, "Queensland");
-        createQuestion("AUS", "", 16, "");
+        createQuestion("AUS", "Hugh Jackman was born in which city?", 16, "Sydney");
         createQuestion("AUS", "What is a quandong?", 17, "A fruit");
-        createQuestion("AUS", "", 18, "");
-        createQuestion("AUS", "", 19, "");
-        createQuestion("AUS", "", 20, "");
+        createQuestion("AUS", "Which venue has hosted the Australian Open since 1988?", 18, "Melbourne Park");
+        createQuestion("AUS", "Which food product rich in vitamin B did Cyril Callister develop?", 19, "Vegimite");
+        createQuestion("AUS", "Which singer/songwriter went to number 1 with his debut single 'Telluric' in 2016?", 20, "Matt Corby");
 
         //BRAZIL DATABASE POPULATION
-        createQuestion("BRL", "", 1, "");
-        createQuestion("BRL", "", 2, "");
-        createQuestion("BRL", "", 3, "");
-        createQuestion("BRL", "", 4, "");
-        createQuestion("BRL", "", 5, "");
-        createQuestion("BRL", "", 6, "");
-        createQuestion("BRL", "", 7, "");
-        createQuestion("BRL", "", 8, "");
-        createQuestion("BRL", "", 9, "");
-        createQuestion("BRL", "", 10, "");
-        createQuestion("BRL", "", 11, "");
+        createQuestion("BRL", "In Brazil, in 1988, there was an epidemic of a tropical disease of which there were 500,000 reported cases. Which disease?", 1, "Malaria");
+        createQuestion("BRL", "What percentage of the world's tropical rain forests are in Brazil?", 2, "33%");
+        createQuestion("BRL", "What is the name of the world's largest soccer stadium in Rio De Janeiro?", 3, "Maracana Stadium");
+        createQuestion("BRL", "Which 2 South Americal countries do not share a border with Brazil?", 4, "Chile and Ecuador");
+        createQuestion("BRL", "What age do you need to be able to be to vote in Brazil?", 5, "16");
+        createQuestion("BRL", "What is the word carioca used to describe in Rio?", 6, "Local People");
+        createQuestion("BRL", "How many times has Brazil won the world cup?", 7, "5 times");
+        createQuestion("BRL", "What is the national bird of Brazil?", 8, "Rufous-bellied Thrush");
+        createQuestion("BRL", "Name the four colours of the flag.", 9, "Blue, White, Green and Yellow");
+        createQuestion("BRL", "What is the official language of Brazil?", 10, "Portuguese");
+        createQuestion("BRL", "How many states are in Brazil", 11, "26");
         createQuestion("BRL", "", 12, "");
         createQuestion("BRL", "", 13, "");
         createQuestion("BRL", "", 14, "");
