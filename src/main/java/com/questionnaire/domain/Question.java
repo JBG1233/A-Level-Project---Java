@@ -18,13 +18,15 @@ public class Question {
     public String questionText;
     public Integer questionNumber;
     public String questionAnswer;
+    public String userQuestionAnswer;
 
-    public Question(ObjectId _id, String questionCode, String questionText, Integer questionNumber, String questionAnswer) {
+    public Question(ObjectId _id, String questionCode, String questionText, Integer questionNumber, String questionAnswer, String userQuestionAnswer) {
         this._id = _id;
         this.questionCode = questionCode;
         this.questionText = questionText;
         this.questionNumber = questionNumber;
         this.questionAnswer = questionAnswer;
+        this.userQuestionAnswer = userQuestionAnswer;
     }
 
     public String getQuestionCode() {
@@ -43,6 +45,8 @@ public class Question {
         return questionAnswer;
     }
 
+    public String getUserQuestionAnswer(){return userQuestionAnswer;}
+
     public void setQuestionCode(String questionCode) {
         this.questionCode = questionCode;
     }
@@ -58,5 +62,7 @@ public class Question {
     public void setQuestionAnswer(String questionAnswer) {
         this.questionAnswer = questionAnswer;
     }
+
+    public void setUserQuestionAnswer(String userQuestionAnswer){this.userQuestionAnswer = userQuestionAnswer;}
 
 }

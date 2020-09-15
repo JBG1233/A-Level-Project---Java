@@ -1,13 +1,17 @@
 package com.questionnaire.rest;
 
-
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import com.questionnaire.domain.Question;
 import com.questionnaire.repositories.QuestionsRepository;
+import com.questionnaire.service.QuestionValidator;
 import com.questionnaire.service.RandomNumberGenerator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Set;
 
 @Slf4j
@@ -21,8 +25,11 @@ public class QuestionRestController {
     @Autowired
     private QuestionsRepository questionsRepository;
 
+    public Errors errors;
+
     RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
 
+    QuestionValidator questionValidator = new QuestionValidator();
 
     @RequestMapping(method = RequestMethod.GET, value = "/UK")
     public Set<Question> loadUKQuiz () {
@@ -33,7 +40,7 @@ public class QuestionRestController {
     @RequestMapping(method = RequestMethod.GET, value = "/Canada")
     public Set<Question> loadCanadaQuiz () {
         Set<Integer> randomNumbers = randomNumberGenerator.generate(19);
-        log.info("{}", questionsRepository.findByQuestionNumberInAndQuestionCode(randomNumbers, "CAD"));
+        log.info("canada numbers are {}", randomNumbers);
         return questionsRepository.findByQuestionNumberInAndQuestionCode(randomNumbers, "CAD");
     }
 
@@ -52,6 +59,12 @@ public class QuestionRestController {
     public Set<Question> loadChinaQuiz () {
         Set<Integer> randomNumbers = randomNumberGenerator.generate(19);
         return questionsRepository.findByQuestionNumberInAndQuestionCode(randomNumbers, "CNY");
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/Validation")
+        public Integer checkIfAnswersAreValid(@RequestBody Question question, BindingResult result, ModelMap m) {
+        log.info("{}", question.getUserQuestionAnswer());
+        return questionValidator.validate(question.getUserQuestionAnswer());
     }
 
 }

@@ -10,8 +10,7 @@ import java.util.Set;
 @RepositoryDefinition(domainClass = Question.class, idClass = String.class)
 public interface QuestionsRepository extends MongoRepository<Question, String> {
     Question findBy_id(ObjectId _id);
-    Set<Question> findByQuestionNumberInAndQuestionCode(Set<Integer> questionNumber, String questionCode );
     Set<Question> findByQuestionNumberInAndQuestionCodeIn(Integer questionNumber, String questionCode);
-
-
+    Set<Question> findByQuestionCodeIn(Integer questionNumber, String questionCode);
+    Set<Question> findByQuestionNumberInAndQuestionCode(Set<Integer> questionNumber, String questionCode );
 }
