@@ -25,10 +25,9 @@ public class QuestionRestController {
     @Autowired
     private QuestionsRepository questionsRepository;
 
-    public Errors errors;
-
     RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
 
+    @Autowired
     QuestionValidator questionValidator = new QuestionValidator();
 
     @RequestMapping(method = RequestMethod.GET, value = "/UK")
@@ -40,7 +39,6 @@ public class QuestionRestController {
     @RequestMapping(method = RequestMethod.GET, value = "/Canada")
     public Set<Question> loadCanadaQuiz () {
         Set<Integer> randomNumbers = randomNumberGenerator.generate(19);
-        log.info("canada numbers are {}", randomNumbers);
         return questionsRepository.findByQuestionNumberInAndQuestionCode(randomNumbers, "CAD");
     }
 
@@ -62,9 +60,8 @@ public class QuestionRestController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/Validation")
-        public Integer checkIfAnswersAreValid(@RequestBody Question question, BindingResult result, ModelMap m) {
-        log.info("{}", question.getUserQuestionAnswer());
-        return questionValidator.validate(question.getUserQuestionAnswer());
+        public Integer checkIfAnswersAreValid(@RequestBody Question question) {
+        return questionValidator.validate(question.getUserQuestionAnswer(), question.getQuestionNumber(), question.getQuestionCode());
     }
 
 }
