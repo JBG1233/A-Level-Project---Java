@@ -7,7 +7,7 @@ import me.xdrop.fuzzywuzzy.FuzzySearch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.ArrayList;
 
 
 @Slf4j
@@ -18,26 +18,27 @@ public class QuestionValidator {
     @Autowired
     private QuestionsRepository questionsRepository;
 
-    private Integer score = 0;
 
-    public Integer validate(String QuestionAnswer, Integer QuestionNumber, String QuestionCode) {
-        for (int i = 0; i <= 6; i++) {
-            String realAnswer = (questionsRepository.findByQuestionNumberAndQuestionCode(QuestionNumber, QuestionCode)).get(0).questionAnswer;
-            score = validateAnswers(QuestionAnswer, realAnswer);
+    public Integer validate(ArrayList<Question> question, Integer score) {
+        for (int questionIndex = 0; questionIndex <= 6; questionIndex++) {
+            String userQuestionAnswer = question.get(questionIndex).userQuestionAnswer;
+            Integer questionNumber = question.get(questionIndex).questionNumber;
+            String questionCode = question.get(questionIndex).questionCode;
+            String realAnswer = (questionsRepository.findByQuestionNumberAndQuestionCode(questionNumber, questionCode)).get(0).questionAnswer;
+            score = validateAnswers(userQuestionAnswer, realAnswer, score);
         }
-        log.info("You scored {}", score);
         return score;
     }
 
-    private Integer validateAnswers(String questionAnswer, String realAnswer) {
-        return calculateScore(FuzzySearch.ratio(realAnswer, questionAnswer));
+    private Integer validateAnswers(String questionAnswer, String realAnswer, Integer score) {
+        return calculateScore(FuzzySearch.ratio(realAnswer, questionAnswer), score);
     }
 
-    public Integer calculateScore(Integer validatedScore) {
+    private Integer calculateScore(Integer validatedScore, Integer score) {
         if (validatedScore >= 80) {
             score = score + 1;
         }
-        return score;
+        return score;   
     }
 }
 

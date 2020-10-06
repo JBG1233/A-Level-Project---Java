@@ -3,7 +3,7 @@ package com.questionnaire.service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Access_Token {
+public class AccessToken {
 
     public static String getAlphaNumericString(int n) {
         String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"

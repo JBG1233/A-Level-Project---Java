@@ -7,12 +7,12 @@ public class User {
 
     public String username;
     public String password;
-    public String access_token;
+    public String accessToken;
 
-    public User(String username, String password, String access_token) {
+    public User(String username, String password, String accessToken) {
         this.username = username;
         this.password = password;
-        this.access_token = access_token;
+        this.accessToken = accessToken;
     }
 
     public String getUsername() {
@@ -23,8 +23,8 @@ public class User {
         return password;
     }
 
-    public String getAccess_token() {
-        return access_token;
+    public String getAccessToken() {
+        return accessToken;
     }
 
     public void setUsername(String username) {
@@ -35,8 +35,8 @@ public class User {
         this.password = password;
     }
 
-    public void setAccess_token() {
-        this.access_token = access_token;
+    public void setaccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
 
 
