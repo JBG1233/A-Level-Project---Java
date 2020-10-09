@@ -22,32 +22,32 @@ public class QuestionRestController {
 
     RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
 
-    @RequestMapping(method = RequestMethod.GET, value = "/UK")
+    @RequestMapping(method = RequestMethod.GET, value = "/uk")
     public Set<Question> loadUKQuiz () {
-        Set<Integer> randomNumbers = randomNumberGenerator.generate(19);
+        Set<Integer> randomNumbers = randomNumberGenerator.generate(20);
         return questionsRepository.findByQuestionNumberInAndQuestionCode(randomNumbers, "GBP");
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/Canada")
+    @RequestMapping(method = RequestMethod.GET, value = "/canada")
     public Set<Question> loadCanadaQuiz () {
-        Set<Integer> randomNumbers = randomNumberGenerator.generate(19);
+        Set<Integer> randomNumbers = randomNumberGenerator.generate(20);
         return questionsRepository.findByQuestionNumberInAndQuestionCode(randomNumbers, "CAD");
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/Australia")
+    @RequestMapping(method = RequestMethod.GET, value = "/australia")
     public Set<Question> loadAustraliaQuiz () {
-        Set<Integer> randomNumbers = randomNumberGenerator.generate(19);
+        Set<Integer> randomNumbers = randomNumberGenerator.generate(20);
         return questionsRepository.findByQuestionNumberInAndQuestionCode(randomNumbers, "AUS");
     }
-    @RequestMapping(method = RequestMethod.GET, value = "/Brazil")
+    @RequestMapping(method = RequestMethod.GET, value = "/brazil")
     public Set<Question> loadBrazilQuiz () {
-        Set<Integer> randomNumbers = randomNumberGenerator.generate(19);
+        Set<Integer> randomNumbers = randomNumberGenerator.generate(20);
         return questionsRepository.findByQuestionNumberInAndQuestionCode(randomNumbers, "BRL");
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/China")
+    @RequestMapping(method = RequestMethod.GET, value = "/china")
     public Set<Question> loadChinaQuiz () {
-        Set<Integer> randomNumbers = randomNumberGenerator.generate(19);
+        Set<Integer> randomNumbers = randomNumberGenerator.generate(20);
         return questionsRepository.findByQuestionNumberInAndQuestionCode(randomNumbers, "CNY");
     }
 

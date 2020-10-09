@@ -11,6 +11,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
 @Slf4j
 @RestController
 @RequestMapping("/rest")
@@ -25,26 +29,29 @@ public class UserRestController {
     private ScoresRepository scoresRepository;
 
 
-    @RequestMapping(method = RequestMethod.POST, value = "/Register")
+    @RequestMapping(method = RequestMethod.POST, value = "/register")
     public User register(@RequestBody User user) throws ConflictException {
-        if (userRepository.findByUsernameIn(user.getUsername()) == null) {
-            String accessToken = AccessToken.getAlphaNumericString(15);
-            scoresRepository.save(new Score(0, 0,0,0, accessToken));
+        if ((userRepository.findByUsername(user.getUsername())) == null) {
+            String accessToken = AccessToken.getAccessToken(15);
+            ArrayList qWrongLast7 = new ArrayList<>();
+            ArrayList qRightLast7 = new ArrayList<>();
+            ArrayList qPercentageLast7 = new ArrayList<>();
+            scoresRepository.save(new Score(0, 0,0,0, accessToken, qWrongLast7, qRightLast7, qPercentageLast7));
             return userRepository.save(new User(user.getUsername(), user.getPassword(), accessToken));
         } else {
             throw new ConflictException("User already exists");
         }
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/Login")
-    public User login(@RequestBody User user) throws BadRequestException {
-        if (userRepository.findByUsernameIn(user.getUsername()) == null) {
+    @RequestMapping(method = RequestMethod.POST, value = "/login")
+    public String login(@RequestBody User user) throws BadRequestException {
+        if ((userRepository.findByUsername(user.getUsername())).username == null) {
             throw new BadRequestException("Username or password not found");
         } else {
-            if (userRepository.findByPasswordIn(user.getPassword()) == null) {
+            if ((userRepository.findByPassword(user.getPassword())).password == null) {
                 throw new BadRequestException("Username or password not found");
             } else {
-                return userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword());
+                return (userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword())).accessToken;
             }
         }
     }

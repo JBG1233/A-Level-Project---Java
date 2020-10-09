@@ -2,6 +2,7 @@ package com.questionnaire.service;
 
 import com.questionnaire.domain.Question;
 import com.questionnaire.repositories.QuestionsRepository;
+import com.questionnaire.repositories.ScoresRepository;
 import lombok.extern.slf4j.Slf4j;
 import me.xdrop.fuzzywuzzy.FuzzySearch;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,8 @@ public class QuestionValidator {
     @Autowired
     private QuestionsRepository questionsRepository;
 
+    @Autowired
+    ScoresRepository scoresRepository;
 
     public Integer validate(ArrayList<Question> question, Integer score) {
         for (int questionIndex = 0; questionIndex <= 6; questionIndex++) {
@@ -35,7 +38,7 @@ public class QuestionValidator {
     }
 
     private Integer calculateScore(Integer validatedScore, Integer score) {
-        if (validatedScore >= 80) {
+        if (validatedScore >= 70) {
             score = score + 1;
         }
         return score;   

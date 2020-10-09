@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AccessToken {
 
-    public static String getAlphaNumericString(int n) {
+    public static String getAccessToken(int n) {
         String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 + "0123456789"
                 + "abcdefghijklmnopqrstuvxyz";

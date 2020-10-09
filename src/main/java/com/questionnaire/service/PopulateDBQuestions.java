@@ -35,7 +35,7 @@ public class PopulateDBQuestions {
         createQuestion("GBP", "What did the Scottish inventor John Logie Baird?", 15, "The television");
         createQuestion("GBP", "What is Cornwall famous for mining?", 16, "Tin");
         createQuestion("GBP", "Who were the original two presenters of the great british bake off?", 17, "Mary Berry and Paul Hollywood");
-        createQuestion("GBP", "What is the difference between a Shepard's pie and a Cottage pie?", 18, "Shepard's pie is made with lamb whereas Cottage pie is not");
+        createQuestion("GBP", "What meat does a Sheperd's pie have that a Cottage pie does not?", 18, "Lamb");
         createQuestion("GBP", "Which mountain range is often described as the ‘backbone of England’?", 19, "The Pennines");
         createQuestion("GBP", "What is the national flower of Wales?", 20, "Daffodil");
 
@@ -87,7 +87,7 @@ public class PopulateDBQuestions {
         createQuestion("BRL", "In Brazil, in 1988, there was an epidemic of a tropical disease of which there were 500,000 reported cases. Which disease?", 1, "Malaria");
         createQuestion("BRL", "What percentage of the world's tropical rain forests are in Brazil?", 2, "33%");
         createQuestion("BRL", "What is the name of the world's largest soccer stadium in Rio De Janeiro?", 3, "Maracana Stadium");
-        createQuestion("BRL", "Which 2 South Americal countries do not share a border with Brazil?", 4, "Chile and Ecuador");
+        createQuestion("BRL", "Which 2 South American countries do not share a border with Brazil?", 4, "Chile and Ecuador");
         createQuestion("BRL", "What age do you need to be able to be to vote in Brazil?", 5, "16");
         createQuestion("BRL", "What is the word carioca used to describe in Rio?", 6, "Local People");
         createQuestion("BRL", "How many times has Brazil won the world cup?", 7, "5 times");
@@ -129,7 +129,7 @@ public class PopulateDBQuestions {
     }
 
     public void createQuestion(String questionCode, String questionText, int questionNumber, String questionAnswer) {
-        if (questionsRepository.findByQuestionNumberInAndQuestionCodeIn(1, "GBP") == null) {
+        if ((questionsRepository.findByQuestionNumberInAndQuestionCodeIn(1, "GBP")) == null) {
             Question question = new Question();
             question.setQuestionCode(questionCode);
             question.setQuestionText(questionText);

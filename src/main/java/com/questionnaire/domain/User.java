@@ -35,7 +35,7 @@ public class User {
         this.password = password;
     }
 
-    public void setaccessToken(String accessToken) {
+    public void setAccessToken(String accessToken) {
         this.accessToken = accessToken;
     }
 
