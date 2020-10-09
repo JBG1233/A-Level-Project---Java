@@ -95,47 +95,46 @@ public class PopulateDBQuestions {
         createQuestion("BRL", "Name the four colours of the flag.", 9, "Blue, White, Green and Yellow");
         createQuestion("BRL", "What is the official language of Brazil?", 10, "Portuguese");
         createQuestion("BRL", "How many states are in Brazil", 11, "26");
-        createQuestion("BRL", "", 12, "");
-        createQuestion("BRL", "", 13, "");
-        createQuestion("BRL", "", 14, "");
-        createQuestion("BRL", "", 15, "");
-        createQuestion("BRL", "", 16, "");
-        createQuestion("BRL", "", 17, "");
-        createQuestion("BRL", "", 18, "");
-        createQuestion("BRL", "", 19, "");
-        createQuestion("BRL", "", 20, "");
+        createQuestion("BRL", "What is the capital city of Brazil?", 12, "Brasilia");
+        createQuestion("BRL", "Was Rio de Janero the first South American city to host the olympic games?", 13, "Yes");
+        createQuestion("BRL", "What age can you vote in Brazil", 14, "16");
+        createQuestion("BRL", "What percentage of the Brazilian population has Silva as a surname?", 15, "10");
+        createQuestion("BRL", "Did Rio’s famous Christ the Redeemer statue lose a thumb in a thunder storm in 2014?", 16, "Yes");
+        createQuestion("BRL", "The national dish of Brazil is feijoada, but what is it exactly?", 17, "A stew made from black beans, sausages and pork");
+        createQuestion("BRL", "What kind of behaviour does 'O jeitinho brasileir' or ‘The little  Brazilian way’ denote? ", 18, "A cheeky little rule breaking");
+        createQuestion("BRL", "How many times was the Brazilian Ayrton Senna the Formula 1 world champion?", 19, "3");
+        createQuestion("BRL", "Who plays the part of Josef Mengele in the 1978 film 'The Boys From Brazil'?", 20, "Gregory Peck");
 
         //CHINA DATABASE POPULATION
-        createQuestion("CNY", "", 1, "");
-        createQuestion("CNY", "", 2, "");
-        createQuestion("CNY", "", 3, "");
-        createQuestion("CNY", "", 4, "");
-        createQuestion("CNY", "", 5, "");
-        createQuestion("CNY", "", 6, "");
-        createQuestion("CNY", "", 7, "");
-        createQuestion("CNY", "", 8, "");
-        createQuestion("CNY", "", 9, "");
-        createQuestion("CNY", "", 10, "");
-        createQuestion("CNY", "", 11, "");
-        createQuestion("CNY", "", 12, "");
-        createQuestion("CNY", "", 13, "");
-        createQuestion("CNY", "", 14, "");
-        createQuestion("CNY", "", 15, "");
-        createQuestion("CNY", "", 16, "");
-        createQuestion("CNY", "", 17, "");
-        createQuestion("CNY", "", 18, "");
-        createQuestion("CNY", "", 19, "");
-        createQuestion("CNY", "", 20, "");
+        createQuestion("CNY", "What is the fear of China or Chinese called?", 1, "Sinophobia");
+        createQuestion("CNY", "Cha dao is the art of what?", 2, "Making tea");
+        createQuestion("CNY", "Translate Feng-shui.", 3, "Wind and water");
+        createQuestion("CNY", "Which was the first British pop group to tour China?", 4, "Wham.");
+        createQuestion("CNY", "In which Chinese City can you see the Terracotta Army?", 5, "Xi'an");
+        createQuestion("CNY", "What was the name of an ancient road, linking China with the West running through Afghanistan and the Middle East, used by Marco Polo to travel to China?", 6, "Silk Road");
+        createQuestion("CNY", "How many days did the famous Long March of the Chinese Communists (1934-1935) last?", 7, "368");
+        createQuestion("CNY", "Which bird is trained by the Chinese to catch fish?", 8, "The cormorant");
+        createQuestion("CNY", "What is the population of China?", 9, "1.43 billion");
+        createQuestion("CNY", "How many countries does China border?", 10, "14");
+        createQuestion("CNY", "How many provinces does China have?", 11, "23");
+        createQuestion("CNY", "How many timezones does China have?", 12, "1");
+        createQuestion("CNY", "What percent of the county is desert?", 13, "20");
+        createQuestion("CNY", "How long is China's Great Wall? (KM)", 14, "8,850");
+        createQuestion("CNY", "How many megacities are in China?", 15, "33");
+        createQuestion("CNY", "How many zoidac signs are there?", 16, "12");
+        createQuestion("CNY", "What does the dragon symbolise?", 17, "Strength and prosperity");
+        createQuestion("CNY", "What does 'Xie Xie' mean?", 18, "Thank you");
+        createQuestion("CNY", "What is Dim Sum?", 19, "Steamed dumplings filled with minced meat or vegetables");
+        createQuestion("CNY", "What is Chow Mein?", 20, "Stir-fried egg noodles with chicken strips");
     }
 
     public void createQuestion(String questionCode, String questionText, int questionNumber, String questionAnswer) {
-        if ((questionsRepository.findByQuestionNumberInAndQuestionCodeIn(1, "GBP")) == null) {
-            Question question = new Question();
-            question.setQuestionCode(questionCode);
-            question.setQuestionText(questionText);
-            question.setQuestionNumber(questionNumber);
-            question.setQuestionAnswer(questionAnswer);
-            questionsRepository.save(question);
-        }
+            //Question question = new Question();
+            //question.setQuestionCode(questionCode);
+            //question.setQuestionText(questionText);
+            //question.setQuestionNumber(questionNumber);
+            //question.setQuestionAnswer(questionAnswer);
+            //questionsRepository.save(question);
+
     }
 }
