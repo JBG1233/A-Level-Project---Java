@@ -135,6 +135,5 @@ public class PopulateDBQuestions {
             //question.setQuestionNumber(questionNumber);
             //question.setQuestionAnswer(questionAnswer);
             //questionsRepository.save(question);
-
     }
 }

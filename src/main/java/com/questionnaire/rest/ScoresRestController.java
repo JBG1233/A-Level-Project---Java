@@ -1,6 +1,6 @@
 package com.questionnaire.rest;
 
-import com.questionnaire.domain.Question;
+import com.questionnaire.domain.Question; 
 import com.questionnaire.domain.Score;
 import com.questionnaire.repositories.ScoresRepository;
 import com.questionnaire.service.QuestionValidator;
@@ -16,7 +16,7 @@ import java.util.ArrayList;
 @Slf4j
 @RestController
 @RequestMapping("/rest")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 
 public class ScoresRestController {
 
@@ -38,7 +38,7 @@ public class ScoresRestController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/leaderboard")
-    public Score getLeaderboardStats(HttpServletRequest request) throws IOException {
+    public Score getLweaderboardStats(HttpServletRequest request) throws IOException {
         String accessToken = request.getHeader("Authorization");
         return scoresRepository.findByAccessToken(accessToken);
     }

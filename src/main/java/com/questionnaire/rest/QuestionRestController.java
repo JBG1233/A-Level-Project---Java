@@ -12,7 +12,7 @@ import java.util.Set;
 @Slf4j
 @RestController
 @RequestMapping("/rest/questions")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 
 
 public class QuestionRestController {
