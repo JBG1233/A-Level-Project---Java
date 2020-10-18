@@ -38,7 +38,7 @@ public class ScoresRestController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/leaderboard")
-    public Score getLweaderboardStats(HttpServletRequest request) throws IOException {
+    public Score getLeaderboardStats(HttpServletRequest request) throws IOException {
         String accessToken = request.getHeader("Authorization");
         return scoresRepository.findByAccessToken(accessToken);
     }
