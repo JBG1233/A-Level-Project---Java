@@ -9,7 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
 
 import java.util.ArrayList;
 
@@ -30,7 +29,7 @@ public class ScoresRestController {
     UpdateScores updateScores = new UpdateScores();
 
     @RequestMapping(method = RequestMethod.POST, value = "/validation")
-    public Integer checkIfAnswersAreValid(@RequestBody ArrayList<Question> question, HttpServletRequest request) throws IOException {
+    public Integer checkIfAnswersAreValid(@RequestBody ArrayList<Question> question, HttpServletRequest request) {
         String accessToken = request.getHeader("Authorization");
         Integer score = questionValidator.validate(question, 0);
         updateScores.updateScore(accessToken, score);
@@ -38,7 +37,7 @@ public class ScoresRestController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/leaderboard")
-    public Score getLeaderboardStats(HttpServletRequest request) throws IOException {
+    public Score getLeaderboardStats(HttpServletRequest request) {
         String accessToken = request.getHeader("Authorization");
         return scoresRepository.findByAccessToken(accessToken);
     }

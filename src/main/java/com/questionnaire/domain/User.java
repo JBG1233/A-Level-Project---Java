@@ -3,6 +3,7 @@ package com.questionnaire.domain;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.springframework.data.mongodb.core.mapping.Document;
+
 @NoArgsConstructor
 @ToString
 @Document(collection = "users")

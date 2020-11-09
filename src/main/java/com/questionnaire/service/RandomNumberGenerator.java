@@ -12,14 +12,14 @@ import java.util.Set;
 @Service
 public class RandomNumberGenerator {
 
-    public Set<Integer> generate(int endRange) {
+    public Set<Integer> generate(int startRange, int endRange) {
 
         Random rand = new Random();
 
         Set<Integer> numbers = new HashSet<>();
 
         while (numbers.size() < 7) {
-            int randomNum = rand.nextInt(endRange) + 1;
+            int randomNum = rand.nextInt(endRange - startRange) + startRange;
             if (numbers.contains(randomNum)) {
             } else {
                 numbers.add(randomNum);

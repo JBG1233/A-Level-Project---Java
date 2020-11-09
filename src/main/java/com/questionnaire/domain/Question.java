@@ -15,56 +15,59 @@ public class Question {
 
     @Id
     public ObjectId _id;
-    public String questionCode;
+    public String groupId;
     public String questionText;
-    public Integer questionNumber;
+    public Integer questionId;
     public String questionAnswer;
     public String userQuestionAnswer;
 
-    public Question(ObjectId _id, String questionCode, String questionText, Integer questionNumber, String questionAnswer, String userQuestionAnswer) {
+    public Question(ObjectId _id, String groupId, String questionText, Integer questionId, String questionAnswer, String userQuestionAnswer) {
         this._id = _id;
-        this.questionCode = questionCode;
+        this.groupId = groupId;
         this.questionText = questionText;
-        this.questionNumber = questionNumber;
+        this.questionId = questionId;
         this.questionAnswer = questionAnswer;
         this.userQuestionAnswer = userQuestionAnswer;
     }
 
-
-    public String getQuestionCode() {
-        return questionCode;
+    public String getGroupId() {
+        return groupId;
     }
 
     public String getQuestionText() {
         return questionText;
     }
 
-    public Integer getQuestionNumber() {
-        return questionNumber;
+    public Integer getQuestionId() {
+        return questionId;
     }
 
     public String getQuestionAnswer() {
         return questionAnswer;
     }
 
-    public String getUserQuestionAnswer(){return userQuestionAnswer;}
+    public String getUserQuestionAnswer(){
+        return userQuestionAnswer;
+    }
 
-    public void setQuestionCode(String questionCode) {
-        this.questionCode = questionCode;
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
     }
 
     public void setQuestionText(String questionText) {
         this.questionText = questionText;
     }
 
-    public void setQuestionNumber(Integer questionNumber) {
-        this.questionNumber = questionNumber;
+    public void setQuestionId(Integer questionId) {
+        this.questionId = questionId;
     }
 
     public void setQuestionAnswer(String questionAnswer) {
         this.questionAnswer = questionAnswer;
     }
 
-    public void setUserQuestionAnswer(String userQuestionAnswer){this.userQuestionAnswer = userQuestionAnswer;}
+    public void setUserQuestionAnswer(String userQuestionAnswer){
+        this.userQuestionAnswer = userQuestionAnswer;
+    }
 
 }

@@ -22,6 +22,9 @@ public class LoginAndRegister {
     @Autowired
     private ScoresRepository scoresRepository;
 
+    @Autowired
+    AccessToken accessToken = new AccessToken();
+
     public User login(User user) throws BadRequestException {
         return checkForUsername(user);
     }
@@ -47,7 +50,7 @@ public class LoginAndRegister {
     }
 
     void newUser(User user) throws ConflictException {
-        if ((userRepository.findByUsername(user.getUsername()).username) == null) {
+        if (!userRepository.existsByUsernameIsIn(user.getUsername())) {
             String accessToken = AccessToken.getAccessToken(15);
             createNewUser(user, accessToken);
             createNewScore(accessToken);
@@ -61,7 +64,7 @@ public class LoginAndRegister {
         user1.setUsername(user.getUsername());
         user1.setPassword(user.getPassword());
         user1.setAccessToken(accessToken);
-        userRepository.save(user);
+        userRepository.save(user1);
     }
 
     void createNewScore(String accessToken) {

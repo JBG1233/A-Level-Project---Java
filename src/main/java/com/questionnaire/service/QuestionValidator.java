@@ -25,9 +25,9 @@ public class QuestionValidator {
     public Integer validate(ArrayList<Question> question, Integer score) {
         for (int questionIndex = 0; questionIndex <= 6; questionIndex++) {
             String userQuestionAnswer = question.get(questionIndex).userQuestionAnswer;
-            Integer questionNumber = question.get(questionIndex).questionNumber;
-            String questionCode = question.get(questionIndex).questionCode;
-            String realAnswer = (questionsRepository.findByQuestionNumberAndQuestionCode(questionNumber, questionCode)).get(0).questionAnswer;
+            Integer questionNumber = question.get(questionIndex).questionId;
+            String questionCode = question.get(questionIndex).groupId;
+            String realAnswer = (questionsRepository.findByQuestionIdAndGroupId(questionNumber, questionCode)).get(0).questionAnswer;
             score = validateAnswers(userQuestionAnswer, realAnswer, score);
         }
         return score;
