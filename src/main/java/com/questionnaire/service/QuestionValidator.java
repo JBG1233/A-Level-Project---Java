@@ -9,20 +9,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 @Slf4j
 @Service
-
 public class QuestionValidator {
 
     @Autowired
     private QuestionsRepository questionsRepository;
 
-    @Autowired
     ScoresRepository scoresRepository;
 
-    public Integer validate(ArrayList<Question> question, Integer score) {
+    public Integer validate(ArrayList<Question> question, Integer score) throws BadRequestException {
         for (int questionIndex = 0; questionIndex <= 6; questionIndex++) {
             String userQuestionAnswer = question.get(questionIndex).userQuestionAnswer;
             Integer questionNumber = question.get(questionIndex).questionId;
@@ -31,6 +31,12 @@ public class QuestionValidator {
             score = validateAnswers(userQuestionAnswer, realAnswer, score);
         }
         return score;
+    }
+
+    public boolean checkForIllegalChars(String toExamine) {
+        Pattern pattern = Pattern.compile("[~#@*+%{}<>\\[\\]|\"\\_^=]");
+        Matcher matcher = pattern.matcher(toExamine);
+        return matcher.find();
     }
 
     private Integer validateAnswers(String questionAnswer, String realAnswer, Integer score) {

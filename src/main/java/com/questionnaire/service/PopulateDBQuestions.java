@@ -18,16 +18,16 @@ public class PopulateDBQuestions {
     public void createQuestions() {
 
         //UK GENERAL KNOWLEDGE POPULATION
-        createQuestion("GBPGK", "What does a traditional English breakfast consist of", 1, "Bacon, Eggs, SAUSGKages, Mushrooms, Beans, Toast and tomatoes");
+        createQuestion("GBPGK", "What does a traditional English breakfast consist of", 1, "Bacon, Eggs, Sausages, Mushrooms, Beans, Toast and tomatoes");
         createQuestion("GBPGK", "Who was the first female Prime Minister", 2, "Margaret Thatcher");
         createQuestion("GBPGK", "Who is the heir to the throne?", 3, "Prince Charles");
         createQuestion("GBPGK", "What is the biggest island that surrounds the UK?", 4, "Lewis and Harris");
         createQuestion("GBPGK", "What was the wall that separated England with Scotland?", 5, "Hadrian's Wall");
         createQuestion("GBPGK", "What was Shakespeare's final play called?", 6, "The Two Noble Kinsmen");
         createQuestion("GBPGK", "What county was Edward Elgar born in? ", 7, "Worcestershire");
-        createQuestion("GBPGK", "Who wrote the words to the hymn 'JerEUROPElem'?", 8, "William Blake");
+        createQuestion("GBPGK", "Who wrote the words to the hymn 'Jerusalem'?", 8, "William Blake");
         createQuestion("GBPGK", "Which poet has a national day in Scotland?", 9, "Robert Burns");
-        createQuestion("GBPGK", "What country is giants cAUSGKeway in?", 10, "Northern Ireland");
+        createQuestion("GBPGK", "What country is giants causeway in?", 10, "Northern Ireland");
         createQuestion("GBPGK", "Who created the NHS?", 11, "Aneurin Bevan");
         createQuestion("GBPGK", "What is black pudding made out of?", 12, "Pigs blood");
         createQuestion("GBPGK", "What does the nursery rhyme 'Ring a ring a roses' refer too?", 13, "The plague");
@@ -61,25 +61,25 @@ public class PopulateDBQuestions {
         createQuestion("CADGK", "Canada is the largest exporter of which fruit?", 39, "Blueberries");
         createQuestion("CADGK", "What is Canada's oldest city?", 40, "St. Johns");
 
-        //AUSGKTRALIA GENERAL KNOWLEDGE POPULATION
-        createQuestion("AUSGK", "Who was the most recent AUSGKtralian to win the men’s singles title at Wimbledon?", 41, "Lleyton Hewitt");
+        //AUSTRALIA GENERAL KNOWLEDGE POPULATION
+        createQuestion("AUSGK", "Who was the most recent Australian to win the men’s singles title at Wimbledon?", 41, "Lleyton Hewitt");
         createQuestion("AUSGK", "In what city did the Commonwealth Parliament first sit?", 42, "Melbourne");
         createQuestion("AUSGK", "Who painted the Nebuchadnezzar series?", 43, "Arthur Boyd");
         createQuestion("AUSGK", "In what year was decimal currency introduced?", 44, "1966");
         createQuestion("AUSGK", "Who is the longest serving presenter of Playschool?", 45, "Benita");
-        createQuestion("AUSGK", "What percent of AUSGKtralia is classified as desert?", 46, "35%");
+        createQuestion("AUSGK", "What percent of Australia is classified as desert?", 46, "35%");
         createQuestion("AUSGK", "In rhyming slang, if someone said they we going to have a “bo-peep”, what may they be doing?", 47, "Having a sleep");
-        createQuestion("AUSGK", "What is South AUSGKtralia’s largest island?", 48, "Kangaroo Island");
-        createQuestion("AUSGK", "How many ships were in the first fleet?", 49, "11");
-        createQuestion("AUSGK", "What is South AUSGKtralia’s largest island?", 50, "one cent");
+        createQuestion("AUSGK", "What is South Australia’s largest island?", 48, "Kangaroo Island");
+        createQuestion("AUSGK", "How many ships Australia in the first fleet?", 49, "11");
+        createQuestion("AUSGK", "What is South Australia’s largest island?", 50, "one cent");
         createQuestion("AUSGK", "What is a triantiwontigongolope?", 51, "A mythical insect");
-        createQuestion("AUSGK", "Are there more kangaroos or humans in AUSGKtralia?", 52, "Kangaroos");
-        createQuestion("AUSGK", "How many states does AUSGKtralia have?", 53, "6");
-        createQuestion("AUSGK", "What constallation is depicted on the AUSGKtralian flag?", 54, "The southern cross");
-        createQuestion("AUSGK", "AUSGKtralian, Julian Assange, founder of Wikileaks, was born in which region?", 55, "Queensland");
+        createQuestion("AUSGK", "Are there more kangaroos or humans in Australia?", 52, "Kangaroos");
+        createQuestion("AUSGK", "How many states does Australia have?", 53, "6");
+        createQuestion("AUSGK", "What constallation is depicted on the Australia flag?", 54, "The southern cross");
+        createQuestion("AUSGK", "Australian, Julian Assange, founder of Wikileaks, was born in which region?", 55, "Queensland");
         createQuestion("AUSGK", "Hugh Jackman was born in which city?", 56, "Sydney");
         createQuestion("AUSGK", "What is a quandong?", 57, "A fruit");
-        createQuestion("AUSGK", "Which venue has hosted the AUSGKtralian Open since 1988?", 58, "Melbourne Park");
+        createQuestion("AUSGK", "Which venue has hosted the Australia Open since 1988?", 58, "Melbourne Park");
         createQuestion("AUSGK", "Which food product rich in vitamin B did Cyril Callister develop?", 59, "Vegimite");
         createQuestion("AUSGK", "Which singer/songwriter went to number 1 with his debut single 'Telluric' in 2016?", 60, "Matt Corby");
 
@@ -150,19 +150,19 @@ public class PopulateDBQuestions {
         createQuestion("AMERICA1900H", "", 120, "");
 
         //AMERICA 1800 HISTORY POPULATION
-        createQuestion("AMERICA1800H", "", 121, "");
-        createQuestion("AMERICA1800H", "", 122, "");
-        createQuestion("AMERICA1800H", "", 123, "");
-        createQuestion("AMERICA1800H", "", 124, "");
-        createQuestion("AMERICA1800H", "", 125, "");
-        createQuestion("AMERICA1800H", "", 126, "");
-        createQuestion("AMERICA1800H", "", 127, "");
-        createQuestion("AMERICA1800H", "", 128, "");
-        createQuestion("AMERICA1800H", "", 129, "");
-        createQuestion("AMERICA1800H", "", 130, "");
-        createQuestion("AMERICA1800H", "", 131, "");
-        createQuestion("AMERICA1800H", "", 132, "");
-        createQuestion("AMERICA1800H", "", 133, "");
+        createQuestion("AMERICA1800H", "What year did the Mexican American war start?", 121, "1846");
+        createQuestion("AMERICA1800H", "What was the population of the U.S. in 1850?", 122, "50 million");
+        createQuestion("AMERICA1800H", "What percent of Americans lived in a city in 1860?", 123, "20%");
+        createQuestion("AMERICA1800H", "What were between an American nation and an European nation occurred in 1898?", 124, "The Spanish-American War");
+        createQuestion("AMERICA1800H", "John Adams took up residency in the white house on what date?", 125, "1.11.1800");
+        createQuestion("AMERICA1800H", "What year did the Argentine War of Independence end?", 126, "1818");
+        createQuestion("AMERICA1800H", "Who was the general that took command of the army of the north in 1814?", 127, "General José de San Martín");
+        createQuestion("AMERICA1800H", "What was the military campaign called that started in 1870s led by General Julio Argentino Roca?", 128, "Conquest of the Desert");
+        createQuestion("AMERICA1800H", "What year did the California gold rush start?", 129, "1848");
+        createQuestion("AMERICA1800H", "What year did the California gold rush end?", 130, "1855");
+        createQuestion("AMERICA1800H", "Who won the election on November 2nd 1880?", 131, "James A. Garfield");
+        createQuestion("AMERICA1800H", "What year was the Royal Bermuda Yacht Club established?", 132, "1844");
+        createQuestion("AMERICA1800H", "How many years did the Brazil empire last?", 133, "67");
         createQuestion("AMERICA1800H", "", 134, "");
         createQuestion("AMERICA1800H", "", 135, "");
         createQuestion("AMERICA1800H", "", 136, "");
@@ -238,7 +238,7 @@ public class PopulateDBQuestions {
         createQuestion("AMERICA1500H", "", 200, "");
 
         //AMERICA 1400 HISTORY POPULATION
-        createQuestion("AMERICA1400H", "", 201, "");
+        createQuestion("AMERICA1400H", "What year did Cristopher Columbus land in the Americas?", 201, "1492");
         createQuestion("AMERICA1400H", "", 202, "");
         createQuestion("AMERICA1400H", "", 203, "");
         createQuestion("AMERICA1400H", "", 204, "");
@@ -589,6 +589,27 @@ public class PopulateDBQuestions {
         createQuestion("ASIA1300H", "", 519, "");
         createQuestion("ASIA1300H", "", 520, "");
 
+        //MINECRAFT EASTER EGG POPULATION
+        createQuestion("MINECRAFT", "", 521, "");
+        createQuestion("MINECRAFT", "", 522, "");
+        createQuestion("MINECRAFT", "", 523, "");
+        createQuestion("MINECRAFT", "", 524, "");
+        createQuestion("MINECRAFT", "", 525, "");
+        createQuestion("MINECRAFT", "", 526, "");
+        createQuestion("MINECRAFT", "", 527, "");
+        createQuestion("MINECRAFT", "", 528, "");
+        createQuestion("MINECRAFT", "", 529, "");
+        createQuestion("MINECRAFT", "", 530, "");
+        createQuestion("MINECRAFT", "", 531, "");
+        createQuestion("MINECRAFT", "", 532, "");
+        createQuestion("MINECRAFT", "", 533, "");
+        createQuestion("MINECRAFT", "", 534, "");
+        createQuestion("MINECRAFT", "", 535, "");
+        createQuestion("MINECRAFT", "", 536, "");
+        createQuestion("MINECRAFT", "", 537, "");
+        createQuestion("MINECRAFT", "", 538, "");
+        createQuestion("MINECRAFT", "", 539, "");
+        createQuestion("MINECRAFT", "", 540, "");
     }
 
     public void createQuestion(String groupId, String questionText, Integer questionId, String questionAnswer) {

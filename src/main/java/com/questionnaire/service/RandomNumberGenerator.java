@@ -20,8 +20,7 @@ public class RandomNumberGenerator {
 
         while (numbers.size() < 7) {
             int randomNum = rand.nextInt(endRange - startRange) + startRange;
-            if (numbers.contains(randomNum)) {
-            } else {
+            if (!numbers.contains(randomNum)) {
                 numbers.add(randomNum);
             }
         }

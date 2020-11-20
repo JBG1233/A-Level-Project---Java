@@ -12,11 +12,13 @@ public class User {
     public String username;
     public String password;
     public String accessToken;
+    public long time;
 
-    public User(String username, String password, String accessToken) {
+    public User(String username, String password, String accessToken, long time) {
         this.username = username;
         this.password = password;
         this.accessToken = accessToken;
+        this.time = time;
     }
 
     public String getUsername() {
@@ -31,6 +33,10 @@ public class User {
         return accessToken;
     }
 
+    public long getTime() {
+        return time;
+    }
+
     public void setUsername(String username) {
         this.username = username;
     }
@@ -43,5 +49,8 @@ public class User {
         this.accessToken = accessToken;
     }
 
+    public void setTime(long time) {
+        this.time = time;
+    }
 
 }
