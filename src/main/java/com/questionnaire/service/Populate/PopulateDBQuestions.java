@@ -1,4 +1,4 @@
-package com.questionnaire.service;
+package com.questionnaire.service.Populate;
 
 import com.questionnaire.domain.Question;
 import com.questionnaire.repositories.QuestionsRepository;
@@ -612,9 +612,9 @@ public class PopulateDBQuestions {
         createQuestion("MINECRAFT", "", 540, "");
     }
 
-    public void createQuestion(String groupId, String questionText, Integer questionId, String questionAnswer) {
+    public void createQuestion(String quizId, String questionText, Integer questionId, String questionAnswer) {
             Question question = new Question();
-            question.setGroupId(groupId);
+            question.setQuizId(quizId);
             question.setQuestionText(questionText);
             question.setQuestionId(questionId);
             question.setQuestionAnswer(questionAnswer);

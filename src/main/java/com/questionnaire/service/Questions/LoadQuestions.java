@@ -1,9 +1,10 @@
-package com.questionnaire.service;
+package com.questionnaire.service.Questions;
 
 import com.questionnaire.domain.Question;
 import com.questionnaire.domain.QuizGroup;
 import com.questionnaire.repositories.QuestionsRepository;
 import com.questionnaire.repositories.QuizGroupRepository;
+import com.questionnaire.service.Generation.RandomNumberGenerator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,13 +27,13 @@ public class LoadQuestions {
     @Autowired
     RandomNumberGenerator randomNumberGenerator;
 
-    public Set<Question> getQuestions(String groupId) {
-        Set<Question> groupIds = questionsRepository.findByGroupIdIn(groupId);
-        List<Question> groupIdList = new ArrayList<>(groupIds);
-        Integer startRange = (groupIdList.get(0)) .questionId;
-        Integer endRange = (groupIdList.get(19)).questionId;
+    public Set<Question> getQuestions(String quizId) {
+        Set<Question> quizIds = questionsRepository.findByQuizIdIn(quizId);
+        List<Question> quizIdList = new ArrayList<>(quizIds);
+        Integer startRange = (quizIdList.get(0)) .questionId;
+        Integer endRange = (quizIdList.get(19)).questionId;
         Set<Integer> randomNumbers = randomNumberGenerator.generate(startRange, endRange);
-        return questionsRepository.findByQuestionIdInAndGroupId(randomNumbers, groupId);
+        return questionsRepository.findByQuestionIdInAndQuizId(randomNumbers, quizId);
     }
 
     public List<QuizGroup> getSearchResults(String userInput) {

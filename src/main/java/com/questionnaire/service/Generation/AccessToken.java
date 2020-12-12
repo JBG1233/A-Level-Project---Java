@@ -1,4 +1,4 @@
-package com.questionnaire.service;
+package com.questionnaire.service.Generation;
 
 import org.springframework.stereotype.Service;
 

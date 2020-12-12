@@ -1,4 +1,4 @@
-package com.questionnaire.service;
+package com.questionnaire.service.Questions;
 
 import com.questionnaire.domain.Score;
 import com.questionnaire.repositories.ScoresRepository;

@@ -1,9 +1,11 @@
-package com.questionnaire.service;
+package com.questionnaire.service.Contact;
 
 import com.questionnaire.domain.Contact;
 import com.questionnaire.domain.User;
 import com.questionnaire.repositories.ContactRepository;
 import com.questionnaire.repositories.UserRepository;
+import com.questionnaire.service.Exceptions.BadRequestException;
+import com.questionnaire.service.Exceptions.ForbiddenException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,15 +54,15 @@ public class ContactMe {
         User user = userRepository.findByUsername(username);
         if (System.currentTimeMillis() >= user.getTime()) {
             userRepository.deleteByUsernameAndPassword(user.getUsername(), user.getPassword());
-            User user1 = new User();
-            user1.setUsername(user.getUsername());
-            user1.setPassword(user.getPassword());
-            user1.setAccessToken(user.getAccessToken());
-            user1.setTime(System.currentTimeMillis() + 86400000);
-            userRepository.save(user1);
+            User newUser = new User();
+            newUser.setUsername(user.getUsername());
+            newUser.setPassword(user.getPassword());
+            newUser.setAccessToken(user.getAccessToken());
+            newUser.setTime(System.currentTimeMillis() + 43200000);
+            userRepository.save(newUser);
             createNewContact(newContact);
         } else {
-            throw new BadRequestException("Not allowed another message for 24 hours!");
+            throw new BadRequestException("Not allowed another message for 12 hours!");
         }
     }
 

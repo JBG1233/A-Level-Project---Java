@@ -3,7 +3,7 @@ package com.questionnaire.rest;
 import com.questionnaire.domain.Question;
 import com.questionnaire.domain.QuizGroup;
 import com.questionnaire.repositories.QuestionsRepository;
-import com.questionnaire.service.LoadQuestions;
+import com.questionnaire.service.Questions.LoadQuestions;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,9 +25,9 @@ public class QuestionRestController {
     @Autowired
     QuestionsRepository questionsRepository;
 
-    @RequestMapping(method = RequestMethod.GET, value = "/questions/main/{groupId}")
-    public Set<Question> loadQuiz (@PathVariable ("groupId") String groupId) {
-        return loadQuestions.getQuestions(groupId);
+    @RequestMapping(method = RequestMethod.GET, value = "/questions/main/{quizId}")
+    public Set<Question> loadQuiz (@PathVariable ("quizId") String quizId) {
+        return loadQuestions.getQuestions(quizId);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/questions/search/{userInput}")

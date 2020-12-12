@@ -1,4 +1,4 @@
-package com.questionnaire.service;
+package com.questionnaire.service.Populate;
 
 import com.questionnaire.domain.QuizGroup;
 import com.questionnaire.repositories.QuizGroupRepository;
@@ -20,8 +20,8 @@ public class PopulateDBGroups {
         createGroup("UK", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/UK.jpg", "", "GBPGK");
         createGroup("Brazil", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/Brazil.jpg", "", "BRLGK");
         createGroup("Australia", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/Australia.jpg", "", "AUSGK");
-        createGroup("China", "", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/China.jpg", "CNYGK");
-        createGroup("Canada", "", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/Canada.jpg", "CADGK");
+        createGroup("China",  "https://myworldquizimages.s3.eu-west-2.amazonaws.com/China.jpg", "","CNYGK");
+        createGroup("Canada", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/Canada.jpg", "", "CADGK");
         createGroup("20th Century America", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/20th+Century+America.jpg", "", "AMERICA1900H");
         createGroup("19th Century America", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/19th+Century+America.jpg", "", "AMERICA1800H");
         createGroup("18th Century America", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/18th+Century+America.jpg", "", "AMERICA1700H");
@@ -47,12 +47,12 @@ public class PopulateDBGroups {
 
     }
 
-    public void createGroup (String quizName, String quizImage, String quizDescription, String groupId) {
+    public void createGroup (String quizName, String quizImage, String quizDescription, String quizId) {
         QuizGroup quizGroup = new QuizGroup();
         quizGroup.setQuizName(quizName);
         quizGroup.setQuizImage(quizImage);
         quizGroup.setQuizDescription(quizDescription);
-        quizGroup.setGroupId(groupId);
+        quizGroup.setQuizId(quizId);
         //quizGroupRepository.save(quizGroup);
     }
 }

@@ -1,8 +1,9 @@
-package com.questionnaire.service;
+package com.questionnaire.service.Questions;
 
 import com.questionnaire.domain.Question;
 import com.questionnaire.repositories.QuestionsRepository;
 import com.questionnaire.repositories.ScoresRepository;
+import com.questionnaire.service.Exceptions.BadRequestException;
 import lombok.extern.slf4j.Slf4j;
 import me.xdrop.fuzzywuzzy.FuzzySearch;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +27,8 @@ public class QuestionValidator {
         for (int questionIndex = 0; questionIndex <= 6; questionIndex++) {
             String userQuestionAnswer = question.get(questionIndex).userQuestionAnswer;
             Integer questionNumber = question.get(questionIndex).questionId;
-            String questionCode = question.get(questionIndex).groupId;
-            String realAnswer = (questionsRepository.findByQuestionIdAndGroupId(questionNumber, questionCode)).get(0).questionAnswer;
+            String questionCode = question.get(questionIndex).quizId;
+            String realAnswer = (questionsRepository.findByQuestionIdAndQuizId(questionNumber, questionCode)).get(0).questionAnswer;
             score = validateAnswers(userQuestionAnswer, realAnswer, score);
         }
         return score;
