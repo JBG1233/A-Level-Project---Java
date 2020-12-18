@@ -27,22 +27,33 @@ public class LoadQuestions {
     @Autowired
     RandomNumberGenerator randomNumberGenerator;
 
-    public Set<Question> getQuestions(String quizId) {
-        Set<Question> quizIds = questionsRepository.findByQuizIdIn(quizId);
-        List<Question> quizIdList = new ArrayList<>(quizIds);
-        Integer startRange = (quizIdList.get(0)) .questionId;
-        Integer endRange = (quizIdList.get(19)).questionId;
+    public Set<Question> getQuestions(String groupId) {
+        Set<Question> groupIds = questionsRepository.findByGroupIdIn(groupId);
+        List<Question> groupIdList = new ArrayList<>(groupIds);
+        Integer startRange = (groupIdList.get(0)) .questionId;
+        Integer endRange = (groupIdList.get(19)).questionId;
         Set<Integer> randomNumbers = randomNumberGenerator.generate(startRange, endRange);
-        return questionsRepository.findByQuestionIdInAndQuizId(randomNumbers, quizId);
+        return questionsRepository.findByQuestionIdInAndGroupId(randomNumbers, groupId);
     }
 
     public List<QuizGroup> getSearchResults(String userInput) {
         List<QuizGroup> quizGroups = new ArrayList<>(quizGroupRepository.findAll());
         List<QuizGroup> searchedGroups = new ArrayList<>();
         for (int groupIndex = 0; groupIndex <= (quizGroups.size()-1); groupIndex++) {
-            if (FuzzySearch.ratio(quizGroups.get(groupIndex).quizName, userInput) >= 75) {
+            if (FuzzySearch.ratio(quizGroups.get(groupIndex).searchTerm, userInput) >= 75) {
+                searchedGroups.add(quizGroups.get(groupIndex));
+            }
+        } return searchedGroups;
+    }
+
+    public List<QuizGroup> getViewResults(String groupId) {
+        List<QuizGroup> quizGroups = new ArrayList<>(quizGroupRepository.findAll());
+        List<QuizGroup> searchedGroups = new ArrayList<>();
+        for (int groupIndex = 0; groupIndex <= (quizGroups.size()-1); groupIndex++) {
+            if (quizGroups.get(groupIndex).groupId.equals(groupId)) {
                 searchedGroups.add(quizGroups.get(groupIndex));
             }
         } return searchedGroups;
     }
 }
+

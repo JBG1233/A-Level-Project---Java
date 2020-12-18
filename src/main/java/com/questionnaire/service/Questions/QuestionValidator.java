@@ -27,8 +27,8 @@ public class QuestionValidator {
         for (int questionIndex = 0; questionIndex <= 6; questionIndex++) {
             String userQuestionAnswer = question.get(questionIndex).userQuestionAnswer;
             Integer questionNumber = question.get(questionIndex).questionId;
-            String questionCode = question.get(questionIndex).quizId;
-            String realAnswer = (questionsRepository.findByQuestionIdAndQuizId(questionNumber, questionCode)).get(0).questionAnswer;
+            String questionCode = question.get(questionIndex).groupId;
+            String realAnswer = (questionsRepository.findByQuestionIdAndGroupId(questionNumber, questionCode)).get(0).questionAnswer;
             score = validateAnswers(userQuestionAnswer, realAnswer, score);
         }
         return score;
@@ -45,7 +45,7 @@ public class QuestionValidator {
     }
 
     private Integer calculateScore(Integer validatedScore, Integer score) {
-        if (validatedScore >= 70) {
+        if (validatedScore >= 60) {
             score = score + 1;
         }
         return score;   

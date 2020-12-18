@@ -45,7 +45,7 @@ public class PopulateDBQuestions {
         createQuestion("CADGK", "If hockey is Canada's national winter sport, what is its national summer sport?", 23, "Lacrosse");
         createQuestion("CADGK", "Who became the prime minister on November 4, 2015?", 24, "Justin Trudeau");
         createQuestion("CADGK", "What city is the CN Tower in?", 25, "Toronto");
-        createQuestion("CADGK", "What is the Canadian dish made with french fries, topped with cheese curds and a brown gravy-like sauce?", 6, "Poutine");
+        createQuestion("CADGK", "What is the Canadian dish made with french fries, topped with cheese curds and a brown gravy-like sauce?", 26, "Poutine");
         createQuestion("CADGK", "What year was the Trans-Canada Highway finally completed?", 27, "1971");
         createQuestion("CADGK", "What is the largest city in Canada?", 28, "Toronto");
         createQuestion("CADGK", "How many provinces does Canada have?", 29, "10");
@@ -114,7 +114,7 @@ public class PopulateDBQuestions {
         createQuestion("CNYGK", "What was the name of an ancient road, linking China with the West running through Afghanistan and the Middle East, used by Marco Polo to travel to China?", 86, "Silk Road");
         createQuestion("CNYGK", "How many days did the famous Long March of the Chinese Communists (1934-1935) last?", 87, "368");
         createQuestion("CNYGK", "Which bird is trained by the Chinese to catch fish?", 88, "The cormorant");
-        createQuestion("CNYGK", "What is the population of China?", 89, "1.43 billion");
+        createQuestion("CNYGK", "What is the population of China? (Include unit) ", 89, "1.43 billion");
         createQuestion("CNYGK", "How many countries does China border?", 90, "14");
         createQuestion("CNYGK", "How many provinces does China have?", 91, "23");
         createQuestion("CNYGK", "How many timezones does China have?", 92, "1");
@@ -151,7 +151,7 @@ public class PopulateDBQuestions {
 
         //AMERICA 1800 HISTORY POPULATION
         createQuestion("AMERICA1800H", "What year did the Mexican American war start?", 121, "1846");
-        createQuestion("AMERICA1800H", "What was the population of the U.S. in 1850?", 122, "50 million");
+        createQuestion("AMERICA1800H", "What was the population of the U.S. in 1850? (Include unit)", 122, "50 million");
         createQuestion("AMERICA1800H", "What percent of Americans lived in a city in 1860?", 123, "20%");
         createQuestion("AMERICA1800H", "What were between an American nation and an European nation occurred in 1898?", 124, "The Spanish-American War");
         createQuestion("AMERICA1800H", "John Adams took up residency in the white house on what date?", 125, "1.11.1800");
@@ -612,9 +612,9 @@ public class PopulateDBQuestions {
         createQuestion("MINECRAFT", "", 540, "");
     }
 
-    public void createQuestion(String quizId, String questionText, Integer questionId, String questionAnswer) {
+    public void createQuestion(String groupId, String questionText, Integer questionId, String questionAnswer) {
             Question question = new Question();
-            question.setQuizId(quizId);
+            question.setGroupId(groupId);
             question.setQuestionText(questionText);
             question.setQuestionId(questionId);
             question.setQuestionAnswer(questionAnswer);

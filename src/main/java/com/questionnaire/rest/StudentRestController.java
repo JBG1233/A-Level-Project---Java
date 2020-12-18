@@ -26,12 +26,12 @@ public class StudentRestController {
     @Autowired
     StudentLogin studentLogin;
 
-    @RequestMapping(method = RequestMethod.POST, value = "/register/student")
+    @RequestMapping(method = RequestMethod.POST, value = "/student/register")
     public void register(@RequestBody Student student) throws ConflictException, BadRequestException, InternalServerErrorException {
         studentRegister.register(student);
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/login/student")
+    @RequestMapping(method = RequestMethod.POST, value = "/student/login")
     public Student login(@RequestBody Student student) throws BadRequestException {
         return studentLogin.login(student);
     }

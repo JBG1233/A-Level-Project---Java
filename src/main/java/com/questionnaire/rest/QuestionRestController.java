@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Set;
 
@@ -25,13 +26,18 @@ public class QuestionRestController {
     @Autowired
     QuestionsRepository questionsRepository;
 
-    @RequestMapping(method = RequestMethod.GET, value = "/questions/main/{quizId}")
-    public Set<Question> loadQuiz (@PathVariable ("quizId") String quizId) {
-        return loadQuestions.getQuestions(quizId);
+    @RequestMapping(method = RequestMethod.GET, value = "/questions/main/{groupId}")
+    public Set<Question> loadQuiz (@PathVariable ("groupId") String groupId) {
+        return loadQuestions.getQuestions(groupId);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/questions/search/{userInput}")
     public List<QuizGroup> loadSearchQuiz(@PathVariable("userInput") String userInput) {
         return loadQuestions.getSearchResults(userInput);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/questions/view/{groupId}")
+    public List<QuizGroup> loadViewQuiz(@PathVariable("groupId") String groupId) {
+        return loadQuestions.getViewResults(groupId);
     }
  }

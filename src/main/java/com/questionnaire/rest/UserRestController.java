@@ -23,12 +23,12 @@ public class UserRestController {
     @Autowired
     UserRegister userRegister;
 
-    @RequestMapping(method = RequestMethod.POST, value = "/register/user")
+    @RequestMapping(method = RequestMethod.POST, value = "/user/register")
     public void register(@RequestBody User user) throws ConflictException, BadRequestException {
         userRegister.register(user);
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/login/user")
+    @RequestMapping(method = RequestMethod.POST, value = "/user/login")
     public User login(@RequestBody User user) throws BadRequestException {
         return userLogin.login(user);
     }

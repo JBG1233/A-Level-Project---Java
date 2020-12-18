@@ -15,27 +15,27 @@ public class Question {
 
     @Id
     public ObjectId _id;
-    public String quizId;
+    public String groupId;
     public String questionText;
     public Integer questionId;
     public String questionAnswer;
     public String userQuestionAnswer;
 
-    public Question(ObjectId _id, String quizId, String questionText, Integer questionId, String questionAnswer, String userQuestionAnswer) {
+    public Question(ObjectId _id, String groupId, String questionText, Integer questionId, String questionAnswer, String userQuestionAnswer) {
         this._id = _id;
-        this.quizId = quizId;
+        this.groupId = groupId;
         this.questionText = questionText;
         this.questionId = questionId;
         this.questionAnswer = questionAnswer;
         this.userQuestionAnswer = userQuestionAnswer;
     }
 
-    public String getQuizId() {
-        return quizId;
+    public String getGroupId() {
+        return groupId;
     }
 
-    public void setQuizId(String quizId) {
-        this.quizId = quizId;
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
     }
 
     public String getQuestionText() {
