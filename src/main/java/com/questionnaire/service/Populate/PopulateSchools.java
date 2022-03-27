@@ -2,7 +2,8 @@ package com.questionnaire.service.Populate;
 
 import com.questionnaire.domain.School;
 import com.questionnaire.repositories.SchoolRepository;
-import com.questionnaire.service.Generation.AccessToken;
+import com.questionnaire.service.Generation.UserId;
+import com.questionnaire.service.Generation.UserId;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,7 @@ public class PopulateSchools {
     SchoolRepository schoolRepository;
 
     @Autowired
-    AccessToken accessToken = new AccessToken();
+    UserId userId = new UserId();
 
 
     @PostConstruct
@@ -30,7 +31,7 @@ public class PopulateSchools {
     public void createSchool (String schoolName) {
         School school = new School();
         school.setName(schoolName);
-        school.setSchoolID(AccessToken.getAccessToken(10));
+        school.setSchoolID(UserId.getUserId(10));
         //schoolRepository.save(school);
     }
 }

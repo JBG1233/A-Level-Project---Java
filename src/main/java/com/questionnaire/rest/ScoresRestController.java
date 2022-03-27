@@ -31,16 +31,15 @@ public class ScoresRestController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/validation")
     public Integer checkIfAnswersAreValid(@RequestBody ArrayList<Question> question, HttpServletRequest request) throws BadRequestException {
-        String accessToken = request.getHeader("Authorization");
-        Integer score = questionValidator.validate(question, 0);
-        updateScores.updateScore(accessToken, score);
+        String userId = request.getHeader("Authorization");
+        Integer score = questionValidator.validate(question, 0, userId, "");
         return score;
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/leaderboard")
     public Score getLeaderboardStats(HttpServletRequest request) {
-        String accessToken = request.getHeader("Authorization");
-        return scoresRepository.findByAccessToken(accessToken);
+        String userId = request.getHeader("Authorization");
+        return scoresRepository.findByUserId(userId);
     }
 }
 

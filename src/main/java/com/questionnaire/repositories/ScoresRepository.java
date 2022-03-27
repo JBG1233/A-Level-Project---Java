@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 @RepositoryDefinition(domainClass = Score.class, idClass = String.class)
 public interface ScoresRepository extends MongoRepository<Score, String> {
-    Score findByAccessToken(String accessToken);
-    void deleteByAccessToken(String accessToken);
+    Score findByUserId(String userId);
+    void deleteByUserId(String userId);
 }
 

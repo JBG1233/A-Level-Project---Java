@@ -20,14 +20,16 @@ public class QuizGroup {
     public String quizDescription;
     public String groupId;
     public String searchTerm;
+    public String authorName;
 
-    public QuizGroup(ObjectId _id, String quizName, String quizImage, String quizDescription, String groupId, String searchTerm) {
+    public QuizGroup(ObjectId _id, String quizName, String quizImage, String quizDescription, String groupId, String searchTerm, String authorName) {
         this._id = _id;
         this.quizName = quizName;
         this.quizImage = quizImage;
         this.quizDescription = quizDescription;
         this.groupId = groupId;
         this.searchTerm = searchTerm;
+        this.authorName = authorName;
     }
 
     public ObjectId get_id() {
@@ -76,5 +78,13 @@ public class QuizGroup {
 
     public void setSearchTerm(String searchTerm) {
         this.searchTerm = searchTerm;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
     }
 }

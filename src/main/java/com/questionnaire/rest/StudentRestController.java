@@ -1,7 +1,6 @@
 package com.questionnaire.rest;
 
 import com.questionnaire.domain.Student;
-import com.questionnaire.domain.User;
 import com.questionnaire.repositories.StudentRepository;
 import com.questionnaire.service.Exceptions.BadRequestException;
 import com.questionnaire.service.Exceptions.ConflictException;
@@ -26,6 +25,9 @@ public class StudentRestController {
     @Autowired
     StudentLogin studentLogin;
 
+    @Autowired
+    StudentRepository studentRepository;
+
     @RequestMapping(method = RequestMethod.POST, value = "/student/register")
     public void register(@RequestBody Student student) throws ConflictException, BadRequestException, InternalServerErrorException {
         studentRegister.register(student);
@@ -35,7 +37,7 @@ public class StudentRestController {
     public Student login(@RequestBody Student student) throws BadRequestException {
         return studentLogin.login(student);
     }
-
+    
 }
 
 

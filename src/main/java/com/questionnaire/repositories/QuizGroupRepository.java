@@ -11,4 +11,5 @@ import java.util.List;
 @Repository
 @RepositoryDefinition(domainClass = QuizGroup.class, idClass = String.class)
 public interface QuizGroupRepository extends MongoRepository<QuizGroup, String> {
+    QuizGroup findByGroupId(String groupId);
 }

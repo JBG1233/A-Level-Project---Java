@@ -3,9 +3,9 @@ package com.questionnaire.service.Generation;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AccessToken {
+public class UserId {
 
-    public static String getAccessToken(int n) {
+    public static String getUserId(int n) {
         String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 + "0123456789"
                 + "abcdefghijklmnopqrstuvxyz";

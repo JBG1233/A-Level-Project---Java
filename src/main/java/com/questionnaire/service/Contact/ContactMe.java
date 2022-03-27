@@ -1,7 +1,6 @@
 package com.questionnaire.service.Contact;
 
 import com.questionnaire.domain.Contact;
-import com.questionnaire.domain.User;
 import com.questionnaire.repositories.ContactRepository;
 import com.questionnaire.repositories.UserRepository;
 import com.questionnaire.service.Exceptions.BadRequestException;
@@ -31,7 +30,7 @@ public class ContactMe {
             if (!checkForIllegalCharsContact(newContact.lastName)) {
                 throw new ForbiddenException("No illegal chars allowed");
             } else {
-                contactTimeChecker(newContact, username);
+                createNewContact(newContact);
             }
         }
     }
@@ -50,21 +49,6 @@ public class ContactMe {
         contactRepository.save(contact);
     }
 
-    public void contactTimeChecker(Contact newContact, String username) throws BadRequestException, ForbiddenException {
-        User user = userRepository.findByUsername(username);
-        if (System.currentTimeMillis() >= user.getTime()) {
-            userRepository.deleteByUsernameAndPassword(user.getUsername(), user.getPassword());
-            User newUser = new User();
-            newUser.setUsername(user.getUsername());
-            newUser.setPassword(user.getPassword());
-            newUser.setAccessToken(user.getAccessToken());
-            newUser.setTime(System.currentTimeMillis() + 43200000);
-            userRepository.save(newUser);
-            createNewContact(newContact);
-        } else {
-            throw new BadRequestException("Not allowed another message for 12 hours!");
-        }
-    }
 
 
 }

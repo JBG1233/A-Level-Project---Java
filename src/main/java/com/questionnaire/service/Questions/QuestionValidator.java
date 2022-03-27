@@ -21,16 +21,20 @@ public class QuestionValidator {
     @Autowired
     private QuestionsRepository questionsRepository;
 
+    @Autowired
+    UpdateScores updateScores;
+
     ScoresRepository scoresRepository;
 
-    public Integer validate(ArrayList<Question> question, Integer score) throws BadRequestException {
+    public Integer validate(ArrayList<Question> question, Integer score, String userId, String questionCode) throws BadRequestException {
         for (int questionIndex = 0; questionIndex <= 6; questionIndex++) {
             String userQuestionAnswer = question.get(questionIndex).userQuestionAnswer;
             Integer questionNumber = question.get(questionIndex).questionId;
-            String questionCode = question.get(questionIndex).groupId;
+            questionCode = question.get(questionIndex).groupId;
             String realAnswer = (questionsRepository.findByQuestionIdAndGroupId(questionNumber, questionCode)).get(0).questionAnswer;
             score = validateAnswers(userQuestionAnswer, realAnswer, score);
         }
+        updateScores.updateScore(userId, score, questionCode);
         return score;
     }
 

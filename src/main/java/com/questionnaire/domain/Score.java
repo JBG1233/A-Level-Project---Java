@@ -15,17 +15,17 @@ public class Score {
     public Integer answeredRight;
     public Integer answered;
     public Integer quizzesTaken;
-    public String accessToken;
+    public String userId;
     public ArrayList qWrongLast7;
     public ArrayList qRightLast7;
     public ArrayList percentageLast7;
 
-    public Score(Integer answeredWrong, Integer answeredRight, Integer answered, Integer quizzesTaken, String accessToken, ArrayList qWrongLast7, ArrayList qRightLast7, ArrayList percentageLast7) {
+    public Score(Integer answeredWrong, Integer answeredRight, Integer answered, Integer quizzesTaken, String userId, ArrayList qWrongLast7, ArrayList qRightLast7, ArrayList percentageLast7) {
         this.answeredWrong = answeredWrong;
         this.answeredRight = answeredRight;
         this.answered = answered;
         this.quizzesTaken = quizzesTaken;
-        this.accessToken = accessToken;
+        this.userId = userId;
         this.qWrongLast7 = qWrongLast7;
         this.qRightLast7 = qRightLast7;
         this.percentageLast7 = percentageLast7;
@@ -63,12 +63,12 @@ public class Score {
         this.quizzesTaken = quizzesTaken;
     }
 
-    public String getAccessToken() {
-        return accessToken;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setAccessToken(String accessToken) {
-        this.accessToken = accessToken;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public ArrayList getQWrongLast7() {
@@ -94,4 +94,5 @@ public class Score {
     public void setPercentageLast7(ArrayList percentageLast7) {
         this.percentageLast7 = percentageLast7;
     }
+
 }

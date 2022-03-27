@@ -6,27 +6,23 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @NoArgsConstructor
 @ToString
-@Document(collection = "students")
+@Document(collection = "edusers")
 public class Student {
 
     public String firstName;
     public String lastName;
     public String username;
     public String password;
-    public String role;
-    public String classID;
-    public String accessToken;
-    public long time;
+    public String schoolID;
+    public String userId;
 
-    public void Student(String firstName, String lastName, String password, String username, String role, String classID, String accessToken, long time) {
+    public void Student(String firstName, String lastName, String password, String username, String schoolID, String userId) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.password = password;
-        this.role = role;
-        this.classID = classID;
-        this.accessToken = accessToken;
-        this.time = time;
+        this.schoolID = schoolID;
+        this.userId = userId;
     }
 
     public String getFirstName() {
@@ -61,35 +57,20 @@ public class Student {
         this.password = password;
     }
 
-    public String getRole() {
-        return role;
+    public String getSchoolID() {
+        return schoolID;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setSchoolID(String schoolID) {
+        this.schoolID = schoolID;
     }
 
-    public String getClassID() {
-        return classID;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setClassID(String classID) {
-        this.classID = classID;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public String getAccessToken() {
-        return accessToken;
-    }
-
-    public void setAccessToken(String accessToken) {
-        this.accessToken = accessToken;
-    }
-
-    public long getTime() {
-        return time;
-    }
-
-    public void setTime(long time) {
-        this.time = time;
-    }
 }

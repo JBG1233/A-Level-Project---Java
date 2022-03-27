@@ -1,15 +1,14 @@
 package com.questionnaire.service.LoginAndRegister;
-
 import com.questionnaire.domain.Student;
-import com.questionnaire.domain.Teacher;
 import com.questionnaire.repositories.ScoresRepository;
 import com.questionnaire.repositories.StudentRepository;
-import com.questionnaire.service.Generation.AccessToken;
 import com.questionnaire.service.Exceptions.BadRequestException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 public class StudentLogin {
 
@@ -19,11 +18,8 @@ public class StudentLogin {
     @Autowired
     public ScoresRepository scoresRepository;
 
-    @Autowired
-    AccessToken accessToken = new AccessToken();
-
-    public Student login(Student student) throws BadRequestException {
-        return checkForUsername(student);
+    public Student login(Student edUser) throws BadRequestException {
+        return checkForUsername(edUser);
     }
 
     public Student checkForUsername(Student student) throws BadRequestException {

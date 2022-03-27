@@ -4,7 +4,7 @@ import com.questionnaire.domain.Score;
 import com.questionnaire.domain.User;
 import com.questionnaire.repositories.ScoresRepository;
 import com.questionnaire.repositories.UserRepository;
-import com.questionnaire.service.Generation.AccessToken;
+import com.questionnaire.service.Generation.UserId;
 import com.questionnaire.service.Exceptions.BadRequestException;
 import com.questionnaire.service.Exceptions.ConflictException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ public class UserRegister {
     public ScoresRepository scoresRepository;
 
     @Autowired
-    AccessToken accessToken = new AccessToken();
+    UserId userId = new UserId();
 
     public void register(User user) throws ConflictException, BadRequestException {
         newUser(user);
@@ -33,10 +33,10 @@ public class UserRegister {
 
     public void newUser(User user) throws ConflictException, BadRequestException {
         if (!userRepository.existsByUsernameIsIn(user.getUsername())) {
-            String accessToken = AccessToken.getAccessToken(15);
+            String userId = UserId.getUserId(15);
             if (checkForIllegalChars(user.getUsername())) {
-                createNewUser(user, accessToken);
-                createNewScore(accessToken);
+                createNewUser(user, userId);
+                createNewScore(userId);
             } else {
                 throw new BadRequestException("400");
             }
@@ -51,23 +51,22 @@ public class UserRegister {
         return matcher.find();
     }
 
-    public void createNewUser(User user, String accessToken) {
+    public void createNewUser(User user, String userId) {
         String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
         User newUser = new User();
         newUser.setUsername(user.getUsername());
         newUser.setPassword(hashedPassword);
-        newUser.setAccessToken(accessToken);
-        newUser.setTime(0);
+        newUser.setUserId(userId);
         userRepository.save(newUser);
     }
 
-    public void createNewScore(String accessToken) {
+    public void createNewScore(String userId) {
         Score newScore = new Score();
         newScore.setAnsweredWrong(0);
         newScore.setAnsweredRight(0);
         newScore.setAnswered(0);
         newScore.setQuizzesTaken(0);
-        newScore.setAccessToken(accessToken);
+        newScore.setUserId(userId);
         newScore.setQWrongLast7(new ArrayList<>());
         newScore.setQRightLast7(new ArrayList<>());
         newScore.setPercentageLast7(new ArrayList<>());

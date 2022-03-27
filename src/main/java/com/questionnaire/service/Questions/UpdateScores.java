@@ -5,7 +5,6 @@ import com.questionnaire.repositories.ScoresRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 
 
@@ -16,8 +15,8 @@ public class UpdateScores {
     @Autowired
     ScoresRepository scoresRepository;
 
-    public void updateScore(String accessToken, Integer score) {
-        Score scores = scoresRepository.findByAccessToken(accessToken);
+    public void updateScore(String userId, Integer score, String quizCode) {
+        Score scores = scoresRepository.findByUserId(userId);
         Integer qWrong = getQWrong(scores, score);
         Integer qRight = getQRight(scores, score);
         Integer answered = getAnswered(scores);
@@ -25,8 +24,8 @@ public class UpdateScores {
         ArrayList qWrongLast7 = getQWrongLast7(scores, score);
         ArrayList qRightLast7 = getQRightLast7(scores, score);
         ArrayList percentageLast7 = getPercentageLast7(scores, score);
-        scoresRepository.deleteByAccessToken(accessToken);
-        scoresRepository.save(new Score(qWrong, qRight,answered,quizzesTaken, accessToken, qWrongLast7, qRightLast7, percentageLast7));
+        scoresRepository.deleteByUserId(userId);
+        scoresRepository.save(new Score(qWrong,qRight,answered,quizzesTaken,userId,qWrongLast7,qRightLast7,percentageLast7));
     }
 
     public Integer getQWrong(Score scores, Integer score) {

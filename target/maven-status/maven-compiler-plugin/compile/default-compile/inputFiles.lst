@@ -1,43 +1,43 @@
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\repositories\StudentRepository.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\domain\Score.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\domain\Teacher.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\service\Exceptions\InternalServerErrorException.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\repositories\UserRepository.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\domain\User.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\service\Generation\RandomNumberGenerator.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\service\LoginAndRegister\TeacherRegister.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\repositories\QuestionsRepository.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\rest\StudentRestController.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\repositories\ContactRepository.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\service\Questions\QuestionValidator.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\rest\QuestionRestController.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\rest\ScoresRestController.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\service\Populate\PopulateSchools.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\Application.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\repositories\TeacherRepository.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\service\Exceptions\ConflictException.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\repositories\ScoresRepository.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\service\LoginAndRegister\StudentRegister.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\rest\ContactRestController.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\service\LoginAndRegister\UserRegister.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\repositories\SchoolRepository.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\service\Exceptions\BadRequestException.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\repositories\QuizGroupRepository.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\service\Contact\ContactMe.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\service\Exceptions\ForbiddenException.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\domain\School.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\service\LoginAndRegister\TeacherLogin.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\service\LoginAndRegister\StudentLogin.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\service\Populate\PopulateDBQuestions.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\service\LoginAndRegister\UserLogin.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\domain\QuizGroup.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\domain\Student.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\service\Questions\UpdateScores.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\config\SpringConfig.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\rest\TeacherRestController.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\service\Populate\PopulateDBGroups.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\domain\Question.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\service\Questions\LoadQuestions.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\rest\UserRestController.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\service\Generation\AccessToken.java
-C:\Users\james\Desktop\A Level Project Code\A-Level-Project---Java\src\main\java\com\questionnaire\domain\Contact.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\repositories\QuizGroupRepository.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\domain\QuizGroup.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\rest\ScoresRestController.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\service\Exceptions\BadRequestException.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\rest\TeacherRestController.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\rest\ContactRestController.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\service\LoginAndRegister\TeacherRegister.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\rest\QuestionRestController.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\repositories\StudentRepository.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\service\Populate\PopulateDBGroups.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\service\LoginAndRegister\UserLogin.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\repositories\ContactRepository.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\service\Questions\LoadQuestions.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\domain\School.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\domain\Student.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\service\LoginAndRegister\StudentLogin.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\config\SpringConfig.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\domain\Contact.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\repositories\SchoolRepository.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\repositories\TeacherRepository.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\service\LoginAndRegister\TeacherLogin.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\service\Populate\PopulateDBQuestions.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\domain\Question.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\repositories\UserRepository.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\service\Questions\UpdateScores.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\domain\User.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\service\LoginAndRegister\StudentRegister.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\repositories\QuestionsRepository.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\service\LoginAndRegister\UserRegister.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\domain\Score.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\service\Exceptions\ForbiddenException.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\service\Generation\RandomNumberGenerator.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\repositories\ScoresRepository.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\rest\UserRestController.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\service\Contact\ContactMe.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\service\Populate\PopulateSchools.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\Application.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\rest\StudentRestController.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\domain\Teacher.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\service\Exceptions\InternalServerErrorException.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\service\Questions\QuestionValidator.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\service\Exceptions\ConflictException.java
+C:\Users\james\IdeaProjects\A-Level-Project---Java\src\main\java\com\questionnaire\service\Generation\AccessToken.java

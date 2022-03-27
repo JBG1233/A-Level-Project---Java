@@ -17,43 +17,23 @@ public class PopulateDBGroups {
     @PostConstruct
     public void createGroups() {
 
-        createGroup("UK", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/UK.jpg", "", "GBPGK", "UK");
-        createGroup("Brazil", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/Brazil.jpg", "", "BRLGK", "Brazil");
-        createGroup("Australia", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/Australia.jpg", "", "AUSGK", "Australia");
-        createGroup("China",  "https://myworldquizimages.s3.eu-west-2.amazonaws.com/China.jpg", "","CNYGK", "China");
-        createGroup("Canada", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/Canada.jpg", "", "CADGK", "Canada");
-        createGroup("20th Century America", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/20th+Century+America.jpg", "", "AMERICA1900H", "20th Century America");
-        createGroup("19th Century America", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/19th+Century+America.jpg", "", "AMERICA1800H", "19th Century America");
-        createGroup("18th Century America", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/18th+Century+America.jpg", "", "AMERICA1700H", "18th Century America");
-        createGroup("17th Century America", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/17th+Century+America.jpg", "", "AMERICA1600H", "17th Century America");
-        createGroup("16th Century America", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/16th+Century+America.jpg", "", "AMERICA1500H", "16th Century America");
-        createGroup("15th Century America", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/15th+Century+America.jpg", "", "AMERICA1400H", "15th Century America");
-        createGroup("14th Century America", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/14th+Century+America.jpg", "", "AMERICA1300H", "14th Century America");
-        createGroup("20th Century Europe", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/20th+Century+Europe.jpg", "", "EUROPE1900H", "20th Century Europe");
-        createGroup("19th Century Europe", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/19th+Century+Europe.jpg", "", "EUROPE1800H", "19th Century Europe");
-        createGroup("18th Century Europe", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/18th+Century+Europe.png", "", "EUROPE1700H", "18th Century Europe");
-        createGroup("17th Century Europe", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/17th+Century+Europe.jpg", "", "EUROPE1600H", "17th Century Europe");
-        createGroup("16th Century Europe", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/16th+Century+Europe.jpg", "", "EUROPE1500H", "16th Century Europe");
-        createGroup("15th Century Europe", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/15th+Century+Europe.jpg", "", "EUROPE1400H", "15th Century Europe");
-        createGroup("14th Century Europe", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/14th+Century+Europe.jpg", "", "EUROPE1300H", "14th Century Europe");
-        createGroup("20th Century Asia", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/20th+Century+Asia.png", "", "ASIA1900H", "20th Century Asia");
-        createGroup("19th Century Asia", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/19th+Century+Asia.jpg", "", "ASIA1800H", "19th Century Asia");
-        createGroup("18th Century Asia", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/18th+Century+Asia.jpg", "", "ASIA1700H", "18th Century Asia");
-        createGroup("17th Century Asia", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/17th+Century+Asia.jpg", "", "ASIA1600H", "17th Century Asia");
-        createGroup("16th Century Asia", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/16th+Century+Asia.jpg", "", "ASIA1500H", "16th Century Asia");
-        createGroup("15th Century Asia", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/15th+Century+Asia.jpg", "", "ASIA1400H", "15th Century Asia");
-        createGroup("14th Century Asia", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/14th+Century+Asia.png", "", "ASIA1300H", "14th Century Asia");
-        createGroup("Minecraft", "https://myworldquizimages.s3.eu-west-2.amazonaws.com/Minecraft.jpg", "", "MINECRAFT", "Minecraft");
+        createGroup("UK General Knowledge", "/assets/UK.jpg", "Think you know the UK? Take this quiz to prove your knowledge.", "GBPGK", "UK", "James Badham-Gill");
+        createGroup("Brazil General Knowledge", "/assets/BRAZIL.jpg", "Think you know Brazil? Take this quiz to prove your knowledge.", "BRLGK", "Brazil", "James Badham-Gill");
+        createGroup("Australia General Knowledge", "/assets/AUSTRALIA.jpg", "Think you know Australia? Take this quiz to prove your knowledge.", "AUSGK", "Australia", "James Badham-Gill");
+        createGroup("China General Knowledge", "/assets/CHINA.jpg", "Think you know China? Take this quiz to prove your knowledge.", "CNYGK", "China", "James Badham-Gill");
+        createGroup("Canada General Knowledge", "/assets/CANADA.jpg", "Think you know Canada? Take this quiz to prove your knowledge.", "CADGK", "Canada", "James Badham-Gill");
+        createGroup("Minecraft General Knowledge", "/assets/MINECRAFT.png", "Well done! You found my mini easter egg!    ", "MINECRAFT", "Minecraft", "James Badham-Gill");
 
     }
 
-    public void createGroup (String quizName, String quizImage, String quizDescription, String groupId, String searchTerm) {
+    public void createGroup(String quizName, String quizImage, String quizDescription, String groupId, String searchTerm, String authorName) {
         QuizGroup quizGroup = new QuizGroup();
         quizGroup.setQuizName(quizName);
         quizGroup.setQuizImage(quizImage);
         quizGroup.setQuizDescription(quizDescription);
         quizGroup.setGroupId(groupId);
         quizGroup.setSearchTerm(searchTerm);
+        quizGroup.setAuthorName(authorName);
         //quizGroupRepository.save(quizGroup);
     }
 }
