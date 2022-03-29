@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @NoArgsConstructor
 @ToString
-@Document(collection = "edusers")
+@Document(collection = "students")
 public class Student {
 
     public String firstName;

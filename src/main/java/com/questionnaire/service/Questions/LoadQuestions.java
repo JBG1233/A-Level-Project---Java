@@ -24,18 +24,6 @@ public class LoadQuestions {
     @Autowired
     public QuizGroupRepository quizGroupRepository;
 
-    @Autowired
-    RandomNumberGenerator randomNumberGenerator;
-
-    public Set<Question> getQuestions(String groupId) {
-        Set<Question> groupIds = questionsRepository.findByGroupIdIn(groupId);
-        List<Question> groupIdList = new ArrayList<>(groupIds);
-        Integer startRange = (groupIdList.get(0)) .questionId;
-        Integer endRange = (groupIdList.get(19)).questionId;
-        Set<Integer> randomNumbers = randomNumberGenerator.generate(startRange, endRange);
-        return questionsRepository.findByQuestionIdInAndGroupId(randomNumbers, groupId);
-    }
-
     public List<QuizGroup> getSearchResults(String userInput) {
         List<QuizGroup> quizGroups = new ArrayList<>(quizGroupRepository.findAll());
         List<QuizGroup> searchedGroups = new ArrayList<>();

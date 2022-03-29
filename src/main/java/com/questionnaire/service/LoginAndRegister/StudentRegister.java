@@ -39,7 +39,7 @@ public class StudentRegister {
 
     public void newStudent(Student student) throws ConflictException, BadRequestException, InternalServerErrorException {
         if (schoolRepository.existsBySchoolIDIsIn(student.getSchoolID())) {
-            if (studentRepository.existsByUsernameIsIn(student.getUsername())) {
+            if (!studentRepository.existsByUsernameIsIn(student.getUsername())) {
                 String userId = UserId.getUserId(15);
                 if (checkForIllegalChars(student.getFirstName())) {
                     if (checkForIllegalChars(student.getLastName())) {
